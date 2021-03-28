@@ -23,6 +23,8 @@
 		C67DDDA4260E538D0067C097 /* MySplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DDDA3260E538D0067C097 /* MySplitViewController.swift */; };
 		C67DDDA5260E538D0067C097 /* MySplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DDDA3260E538D0067C097 /* MySplitViewController.swift */; };
 		C67DDDA6260E538D0067C097 /* MySplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DDDA3260E538D0067C097 /* MySplitViewController.swift */; };
+		C6E5779D260F271D00925C1A /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E5779C260F271D00925C1A /* SettingsModel.swift */; };
+		C6E577A8260FA9DC00925C1A /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E577A7260FA9DC00925C1A /* SettingsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		C67DDD95260E45C60067C097 /* MasterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewController.swift; sourceTree = "<group>"; };
 		C67DDD9C260E4ADC0067C097 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C67DDDA3260E538D0067C097 /* MySplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySplitViewController.swift; sourceTree = "<group>"; };
+		C6E5779C260F271D00925C1A /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		C6E577A7260FA9DC00925C1A /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 		C620D926260C0485005BEB77 /* Splitter App */ = {
 			isa = PBXGroup;
 			children = (
+				C6E57798260F269000925C1A /* Data Model */,
 				C620D927260C0485005BEB77 /* AppDelegate.swift */,
 				C620D929260C0485005BEB77 /* SceneDelegate.swift */,
 				C620D92D260C0485005BEB77 /* Main.storyboard */,
@@ -118,6 +123,7 @@
 				C67DDD95260E45C60067C097 /* MasterTableViewController.swift */,
 				C67DDD9C260E4ADC0067C097 /* DetailViewController.swift */,
 				C67DDDA3260E538D0067C097 /* MySplitViewController.swift */,
+				C6E577A7260FA9DC00925C1A /* SettingsTableViewCell.swift */,
 			);
 			path = "Splitter App";
 			sourceTree = "<group>";
@@ -138,6 +144,14 @@
 				C620D94B260C0485005BEB77 /* Info.plist */,
 			);
 			path = "Splitter AppUITests";
+			sourceTree = "<group>";
+		};
+		C6E57798260F269000925C1A /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				C6E5779C260F271D00925C1A /* SettingsModel.swift */,
+			);
+			path = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6E5779D260F271D00925C1A /* SettingsModel.swift in Sources */,
 				C620D928260C0485005BEB77 /* AppDelegate.swift in Sources */,
 				C67DDDA4260E538D0067C097 /* MySplitViewController.swift in Sources */,
 				C67DDD96260E45C60067C097 /* MasterTableViewController.swift in Sources */,
+				C6E577A8260FA9DC00925C1A /* SettingsTableViewCell.swift in Sources */,
 				C620D92A260C0485005BEB77 /* SceneDelegate.swift in Sources */,
 				C67DDD9D260E4ADC0067C097 /* DetailViewController.swift in Sources */,
 			);
@@ -459,7 +475,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AJ7963Q2TW;
 				INFOPLIST_FILE = "Splitter App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -479,7 +495,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AJ7963Q2TW;
 				INFOPLIST_FILE = "Splitter App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

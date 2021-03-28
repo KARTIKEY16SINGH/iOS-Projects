@@ -12,12 +12,6 @@ class MySplitViewController: UISplitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
-        if #available(iOS 14.0, *) {
-            hide(.secondary)
-            print("view controllers = \(viewControllers)")
-        } else {
-            // Fallback on earlier versions
-        }
         // Do any additional setup after loading the view.
     }
     
