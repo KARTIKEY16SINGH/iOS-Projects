@@ -47,8 +47,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="privacy" translatesAutoresizingMaskIntoConstraints="NO" id="LVC-45-bt8">
-                                            <rect key="frame" x="12" y="6" width="32" height="32"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LVC-45-bt8">
+                                            <rect key="frame" x="12" y="4.5" width="32" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="32" id="3l6-Mz-zcj"/>
                                                 <constraint firstAttribute="width" secondItem="LVC-45-bt8" secondAttribute="height" multiplier="1:1" id="tSv-T4-sfn"/>
@@ -131,7 +131,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="privacy" width="360" height="360"/>
+        <image name="key.fill" catalog="system" width="83" height="128"/>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

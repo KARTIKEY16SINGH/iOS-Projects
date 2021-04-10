@@ -55,6 +55,9 @@ class MasterTableViewController: UITableViewController {
     }
 
 
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        "Yahoo"
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
