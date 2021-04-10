@@ -21,6 +21,8 @@
 		C6815E1126217081007839C8 /* RequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6815E0F26217081007839C8 /* RequestTableViewCell.xib */; };
 		C6815E1726218480007839C8 /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6815E1526218480007839C8 /* HostViewController.swift */; };
 		C6815E20262184E8007839C8 /* HostStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6815E1F262184E8007839C8 /* HostStoryboard.storyboard */; };
+		C6E8F20926222EEE00A153CE /* PropertyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E8F20726222EEE00A153CE /* PropertyTableViewCell.swift */; };
+		C6E8F20A26222EEE00A153CE /* PropertyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6E8F20826222EEE00A153CE /* PropertyTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		C6815E0F26217081007839C8 /* RequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestTableViewCell.xib; sourceTree = "<group>"; };
 		C6815E1526218480007839C8 /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		C6815E1F262184E8007839C8 /* HostStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HostStoryboard.storyboard; sourceTree = "<group>"; };
+		C6E8F20726222EEE00A153CE /* PropertyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyTableViewCell.swift; sourceTree = "<group>"; };
+		C6E8F20826222EEE00A153CE /* PropertyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PropertyTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 				C6815DC226214793007839C8 /* GoMmt.xcdatamodeld */,
 				C6815DF2262162D8007839C8 /* PersistentStorage.swift */,
 				C6815E1F262184E8007839C8 /* HostStoryboard.storyboard */,
+				C6E8F20726222EEE00A153CE /* PropertyTableViewCell.swift */,
+				C6E8F20826222EEE00A153CE /* PropertyTableViewCell.xib */,
 			);
 			path = GoMmt;
 			sourceTree = "<group>";
@@ -257,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6E8F20A26222EEE00A153CE /* PropertyTableViewCell.xib in Resources */,
 				C6815DC926214794007839C8 /* LaunchScreen.storyboard in Resources */,
 				C6815E1126217081007839C8 /* RequestTableViewCell.xib in Resources */,
 				C6815DC626214794007839C8 /* Assets.xcassets in Resources */,
@@ -292,6 +299,7 @@
 				C6815DC426214793007839C8 /* GoMmt.xcdatamodeld in Sources */,
 				C6815DF3262162D8007839C8 /* PersistentStorage.swift in Sources */,
 				C6815DBC26214793007839C8 /* SceneDelegate.swift in Sources */,
+				C6E8F20926222EEE00A153CE /* PropertyTableViewCell.swift in Sources */,
 				C6815E1026217081007839C8 /* RequestTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
