@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDGuests" representedClassName="CDGuests" syncable="YES">
+        <attribute name="email" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="email"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="CDHosts" representedClassName="CDHosts" syncable="YES">
+        <attribute name="email" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="email"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="CDPropertyList" representedClassName="CDPropertyList" syncable="YES">
+        <attribute name="distance" optional="YES" attributeType="String"/>
+        <attribute name="facility" optional="YES" attributeType="Transformable"/>
+        <attribute name="host" attributeType="String"/>
+        <attribute name="isAvailable" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="location" attributeType="String"/>
+        <attribute name="moreOption" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="rating" attributeType="Float" minValueString="0" maxValueString="5" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="reviewCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="CDRequests" representedClassName="CDRequests" syncable="YES">
+        <attribute name="adults" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="checkIN" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="checkOut" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="child" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="gID" optional="YES" attributeType="String"/>
+        <attribute name="hID" optional="YES" attributeType="String"/>
+        <attribute name="mealPlan" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="message" optional="YES" attributeType="String"/>
+        <attribute name="paymentType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pID" attributeType="String"/>
+        <attribute name="request" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="CDGuests" positionX="-36" positionY="63" width="128" height="59"/>
+        <element name="CDHosts" positionX="-54" positionY="54" width="128" height="59"/>
+        <element name="CDPropertyList" positionX="-63" positionY="-18" width="128" height="164"/>
+        <element name="CDRequests" positionX="-18" positionY="81" width="128" height="194"/>
+    </elements>
+</model>
