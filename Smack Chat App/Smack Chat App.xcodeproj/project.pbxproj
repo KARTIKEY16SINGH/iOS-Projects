@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C65A6CFF263F02620009B6C4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65A6CFE263F02620009B6C4 /* ChatViewController.swift */; };
 		C6F0EF4D263EEEE800B81F53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F0EF4C263EEEE800B81F53 /* AppDelegate.swift */; };
 		C6F0EF4F263EEEE800B81F53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F0EF4E263EEEE800B81F53 /* SceneDelegate.swift */; };
 		C6F0EF51263EEEE800B81F53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F0EF50263EEEE800B81F53 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C65A6CFE263F02620009B6C4 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		C6F0EF49263EEEE800B81F53 /* Smack Chat App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smack Chat App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F0EF4C263EEEE800B81F53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6F0EF4E263EEEE800B81F53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				C6F0EF55263EEEE900B81F53 /* Assets.xcassets */,
 				C6F0EF57263EEEE900B81F53 /* LaunchScreen.storyboard */,
 				C6F0EF5A263EEEE900B81F53 /* Info.plist */,
+				C65A6CFE263F02620009B6C4 /* ChatViewController.swift */,
 			);
 			path = "Smack Chat App";
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			files = (
 				C6F0EF51263EEEE800B81F53 /* ViewController.swift in Sources */,
 				C6F0EF4D263EEEE800B81F53 /* AppDelegate.swift in Sources */,
+				C65A6CFF263F02620009B6C4 /* ChatViewController.swift in Sources */,
 				C6F0EF4F263EEEE800B81F53 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
