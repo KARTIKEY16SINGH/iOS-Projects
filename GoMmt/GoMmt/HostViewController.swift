@@ -18,12 +18,18 @@ class HostViewController: UIViewController {
     }
 
     private func setupViews() {
-        title = "Requests"
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.register(UINib(nibName: "RequestTableViewCell", bundle: Bundle(for: HostViewController.self)), forCellReuseIdentifier: "requestCell")
+//        navigationController?.navigationBar.back
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.title = "Request"
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -49,5 +55,10 @@ extension HostViewController : UITableViewDataSource {
 extension HostViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         250
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        navigationItem.title = ""
+        navigationController?.pushViewController(UIStoryboard(name: "BookingRequestStoryboard", bundle: Bundle(for: HostViewController.self)).instantiateInitialViewController() ?? BookingRequestViewController(), animated: true)
     }
 }

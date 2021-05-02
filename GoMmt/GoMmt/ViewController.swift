@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        navigationController?.navigationItem.backBarButtonItem = nil
         navigationController?.pushViewController(UIStoryboard(name: "HostStoryboard", bundle: Bundle(for: ViewController.self)).instantiateInitialViewController() ?? HostViewController(), animated: true)
     }
 
