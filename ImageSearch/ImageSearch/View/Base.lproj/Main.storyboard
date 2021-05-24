@@ -24,9 +24,10 @@
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lof-Gu-6Eu">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lof-Gu-6Eu">
                                 <rect key="frame" x="10" y="120" width="394" height="732"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="S9B-2X-eSG"/>
                                 </connections>
@@ -45,7 +46,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="serachBar" destination="aCM-vb-44d" id="kHE-b1-mvb"/>
+                        <outlet property="searchBar" destination="aCM-vb-44d" id="kHE-b1-mvb"/>
+                        <outlet property="tableView" destination="Lof-Gu-6Eu" id="1YT-wj-bDa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
