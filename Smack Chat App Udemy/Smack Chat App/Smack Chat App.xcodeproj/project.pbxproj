@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4E080DCB41AE2F9242F09420 /* Pods_Smack_Chat_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D035E95DAE38AF499F42272E /* Pods_Smack_Chat_App.framework */; };
 		C68341FD26753860005D85E7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C68341FC26753860005D85E7 /* SWRevealViewController.m */; };
+		C699CABD2675C902005E5336 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699CABC2675C902005E5336 /* ChatViewController.swift */; };
+		C699CAC12675C913005E5336 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699CAC02675C913005E5336 /* ChannelViewController.swift */; };
 		C6B8131D2674CAFB001F6E57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8131C2674CAFB001F6E57 /* AppDelegate.swift */; };
 		C6B8131F2674CAFB001F6E57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8131E2674CAFB001F6E57 /* SceneDelegate.swift */; };
 		C6B813212674CAFB001F6E57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B813202674CAFB001F6E57 /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 		C68341FA26753860005D85E7 /* Smack Chat App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack Chat App-Bridging-Header.h"; sourceTree = "<group>"; };
 		C68341FB26753860005D85E7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		C68341FC26753860005D85E7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		C699CABC2675C902005E5336 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		C699CAC02675C913005E5336 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		C6B813192674CAFB001F6E57 /* Smack Chat App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smack Chat App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B8131C2674CAFB001F6E57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6B8131E2674CAFB001F6E57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +68,29 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C699CAB92675C8A5005E5336 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C699CABC2675C902005E5336 /* ChatViewController.swift */,
+				C699CAC02675C913005E5336 /* ChannelViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C699CABA2675C8B0005E5336 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C699CABB2675C8B6005E5336 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C6B813102674CAFB001F6E57 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +112,9 @@
 		C6B8131B2674CAFB001F6E57 /* Smack Chat App */ = {
 			isa = PBXGroup;
 			children = (
+				C699CABB2675C8B6005E5336 /* Views */,
+				C699CABA2675C8B0005E5336 /* Model */,
+				C699CAB92675C8A5005E5336 /* Controllers */,
 				C68341F9267537EC005D85E7 /* Supporting Files */,
 				C6B8131C2674CAFB001F6E57 /* AppDelegate.swift */,
 				C6B8131E2674CAFB001F6E57 /* SceneDelegate.swift */,
@@ -224,6 +254,8 @@
 				C6B813212674CAFB001F6E57 /* ViewController.swift in Sources */,
 				C6B8131D2674CAFB001F6E57 /* AppDelegate.swift in Sources */,
 				C6B8131F2674CAFB001F6E57 /* SceneDelegate.swift in Sources */,
+				C699CABD2675C902005E5336 /* ChatViewController.swift in Sources */,
+				C699CAC12675C913005E5336 /* ChannelViewController.swift in Sources */,
 				C68341FD26753860005D85E7 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
