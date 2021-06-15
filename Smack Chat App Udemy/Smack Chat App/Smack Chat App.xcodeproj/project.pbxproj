@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E080DCB41AE2F9242F09420 /* Pods_Smack_Chat_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D035E95DAE38AF499F42272E /* Pods_Smack_Chat_App.framework */; };
+		C67755DB26765CFC00919581 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67755DA26765CFC00919581 /* GradientView.swift */; };
 		C68341FD26753860005D85E7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C68341FC26753860005D85E7 /* SWRevealViewController.m */; };
 		C699CABD2675C902005E5336 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699CABC2675C902005E5336 /* ChatViewController.swift */; };
 		C699CAC12675C913005E5336 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699CAC02675C913005E5336 /* ChannelViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		5CAD18719C417430EF8F1E17 /* Pods-Smack Chat App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack Chat App.debug.xcconfig"; path = "Target Support Files/Pods-Smack Chat App/Pods-Smack Chat App.debug.xcconfig"; sourceTree = "<group>"; };
+		C67755DA26765CFC00919581 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		C68341FA26753860005D85E7 /* Smack Chat App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack Chat App-Bridging-Header.h"; sourceTree = "<group>"; };
 		C68341FB26753860005D85E7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		C68341FC26753860005D85E7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		C699CABB2675C8B6005E5336 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C67755DA26765CFC00919581 /* GradientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				C6B8131D2674CAFB001F6E57 /* AppDelegate.swift in Sources */,
 				C6B8131F2674CAFB001F6E57 /* SceneDelegate.swift in Sources */,
 				C699CABD2675C902005E5336 /* ChatViewController.swift in Sources */,
+				C67755DB26765CFC00919581 /* GradientView.swift in Sources */,
 				C699CAC12675C913005E5336 /* ChannelViewController.swift in Sources */,
 				C68341FD26753860005D85E7 /* SWRevealViewController.m in Sources */,
 			);
@@ -333,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -388,7 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
