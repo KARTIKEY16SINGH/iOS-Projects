@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4E080DCB41AE2F9242F09420 /* Pods_Smack_Chat_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D035E95DAE38AF499F42272E /* Pods_Smack_Chat_App.framework */; };
+		C605B36F267904D400A8AE9B /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C605B36E267904D400A8AE9B /* ChannelTableViewCell.swift */; };
+		C605B3742679060000A8AE9B /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C605B3732679060000A8AE9B /* LoginStoryboard.storyboard */; };
 		C67755DB26765CFC00919581 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67755DA26765CFC00919581 /* GradientView.swift */; };
 		C68341FD26753860005D85E7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C68341FC26753860005D85E7 /* SWRevealViewController.m */; };
 		C699CABD2675C902005E5336 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699CABC2675C902005E5336 /* ChatViewController.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		5CAD18719C417430EF8F1E17 /* Pods-Smack Chat App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack Chat App.debug.xcconfig"; path = "Target Support Files/Pods-Smack Chat App/Pods-Smack Chat App.debug.xcconfig"; sourceTree = "<group>"; };
+		C605B36E267904D400A8AE9B /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
+		C605B3732679060000A8AE9B /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		C67755DA26765CFC00919581 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		C68341FA26753860005D85E7 /* Smack Chat App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack Chat App-Bridging-Header.h"; sourceTree = "<group>"; };
 		C68341FB26753860005D85E7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -60,6 +64,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C605B371267905E400A8AE9B /* GUIs */ = {
+			isa = PBXGroup;
+			children = (
+				C6B813222674CAFB001F6E57 /* Main.storyboard */,
+				C605B3732679060000A8AE9B /* LoginStoryboard.storyboard */,
+			);
+			path = GUIs;
+			sourceTree = "<group>";
+		};
 		C68341F9267537EC005D85E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,7 +102,9 @@
 		C699CABB2675C8B6005E5336 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C605B371267905E400A8AE9B /* GUIs */,
 				C67755DA26765CFC00919581 /* GradientView.swift */,
+				C605B36E267904D400A8AE9B /* ChannelTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -122,7 +137,6 @@
 				C6B8131C2674CAFB001F6E57 /* AppDelegate.swift */,
 				C6B8131E2674CAFB001F6E57 /* SceneDelegate.swift */,
 				C6B813202674CAFB001F6E57 /* ViewController.swift */,
-				C6B813222674CAFB001F6E57 /* Main.storyboard */,
 				C6B813252674CAFB001F6E57 /* Assets.xcassets */,
 				C6B813272674CAFB001F6E57 /* LaunchScreen.storyboard */,
 				C6B8132A2674CAFB001F6E57 /* Info.plist */,
@@ -202,6 +216,7 @@
 				C6B813292674CAFB001F6E57 /* LaunchScreen.storyboard in Resources */,
 				C6B813262674CAFB001F6E57 /* Assets.xcassets in Resources */,
 				C6B813242674CAFB001F6E57 /* Main.storyboard in Resources */,
+				C605B3742679060000A8AE9B /* LoginStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6B813212674CAFB001F6E57 /* ViewController.swift in Sources */,
+				C605B36F267904D400A8AE9B /* ChannelTableViewCell.swift in Sources */,
 				C6B8131D2674CAFB001F6E57 /* AppDelegate.swift in Sources */,
 				C6B8131F2674CAFB001F6E57 /* SceneDelegate.swift in Sources */,
 				C699CABD2675C902005E5336 /* ChatViewController.swift in Sources */,

@@ -125,14 +125,30 @@
                                         <rect key="frame" x="24" y="211" width="306" height="520"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1Nc-t7-fkn">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="channelCell" id="1Nc-t7-fkn" customClass="ChannelTableViewCell" customModule="Smack_Chat_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="306" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Nc-t7-fkn" id="kjH-b0-PHH">
                                                     <rect key="frame" x="0.0" y="0.0" width="306" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#general" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRR-gg-4sA">
+                                                            <rect key="frame" x="40" y="12" width="65.5" height="20"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ZRR-gg-4sA" secondAttribute="trailing" constant="24" id="7h5-QS-902"/>
+                                                        <constraint firstItem="ZRR-gg-4sA" firstAttribute="centerY" secondItem="kjH-b0-PHH" secondAttribute="centerY" id="msb-0S-XoI"/>
+                                                        <constraint firstItem="ZRR-gg-4sA" firstAttribute="leading" secondItem="kjH-b0-PHH" secondAttribute="leadingMargin" constant="24" id="we3-sa-jxv"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="channelNameLabel" destination="ZRR-gg-4sA" id="Vge-ST-IXm"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -151,6 +167,7 @@
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kmL-At-Ccg" secondAttribute="trailing" constant="24" id="b0g-lx-c68"/>
                                     <constraint firstItem="naE-jY-ZYX" firstAttribute="top" secondItem="FaE-bV-ORM" secondAttribute="bottom" constant="24" id="dPp-bv-sJQ"/>
                                     <constraint firstAttribute="trailing" secondItem="FaE-bV-ORM" secondAttribute="trailing" constant="84" id="g3d-aK-rwY"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="I6i-ch-B8n" secondAttribute="trailing" constant="24" id="nuU-c8-Br6"/>
                                     <constraint firstItem="Ofo-6S-gh6" firstAttribute="top" secondItem="kmL-At-Ccg" secondAttribute="bottom" constant="52" id="uB7-Z7-CTW"/>
                                     <constraint firstItem="kmL-At-Ccg" firstAttribute="top" secondItem="FC6-oJ-INr" secondAttribute="top" constant="93" id="v0d-4O-8fF"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="KxQ-EC-tqj" secondAttribute="bottom" constant="24" id="yAw-c7-PLe"/>
