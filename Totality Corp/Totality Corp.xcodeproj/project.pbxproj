@@ -1,0 +1,386 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C66E5A8327A5C798007BB89B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E5A8227A5C798007BB89B /* AppDelegate.swift */; };
+		C66E5A8527A5C798007BB89B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E5A8427A5C798007BB89B /* SceneDelegate.swift */; };
+		C66E5A8727A5C798007BB89B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E5A8627A5C798007BB89B /* ViewController.swift */; };
+		C66E5A8A27A5C798007BB89B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66E5A8827A5C798007BB89B /* Main.storyboard */; };
+		C66E5A8C27A5C798007BB89B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66E5A8B27A5C798007BB89B /* Assets.xcassets */; };
+		C66E5A8F27A5C798007BB89B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66E5A8D27A5C798007BB89B /* LaunchScreen.storyboard */; };
+		C66E5A9C27A5CC23007BB89B /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E5A9A27A5CC23007BB89B /* MainTableViewCell.swift */; };
+		C66E5A9D27A5CC23007BB89B /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C66E5A9B27A5CC23007BB89B /* MainTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C66E5A7F27A5C798007BB89B /* Totality Corp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Totality Corp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66E5A8227A5C798007BB89B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C66E5A8427A5C798007BB89B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C66E5A8627A5C798007BB89B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C66E5A8927A5C798007BB89B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C66E5A8B27A5C798007BB89B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C66E5A8E27A5C798007BB89B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C66E5A9027A5C798007BB89B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C66E5A9A27A5CC23007BB89B /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		C66E5A9B27A5CC23007BB89B /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C66E5A7C27A5C798007BB89B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C66E5A7627A5C798007BB89B = {
+			isa = PBXGroup;
+			children = (
+				C66E5A8127A5C798007BB89B /* Totality Corp */,
+				C66E5A8027A5C798007BB89B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C66E5A8027A5C798007BB89B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C66E5A7F27A5C798007BB89B /* Totality Corp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C66E5A8127A5C798007BB89B /* Totality Corp */ = {
+			isa = PBXGroup;
+			children = (
+				C66E5A9927A5C7E6007BB89B /* Globals */,
+				C66E5A9827A5C7D9007BB89B /* Modals */,
+				C66E5A9727A5C7CC007BB89B /* Views */,
+				C66E5A9627A5C7C0007BB89B /* Controllers */,
+				C66E5A8B27A5C798007BB89B /* Assets.xcassets */,
+				C66E5A9027A5C798007BB89B /* Info.plist */,
+			);
+			path = "Totality Corp";
+			sourceTree = "<group>";
+		};
+		C66E5A9627A5C7C0007BB89B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C66E5A8627A5C798007BB89B /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C66E5A9727A5C7CC007BB89B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C66E5A8D27A5C798007BB89B /* LaunchScreen.storyboard */,
+				C66E5A8827A5C798007BB89B /* Main.storyboard */,
+				C66E5A9A27A5CC23007BB89B /* MainTableViewCell.swift */,
+				C66E5A9B27A5CC23007BB89B /* MainTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C66E5A9827A5C7D9007BB89B /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		C66E5A9927A5C7E6007BB89B /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				C66E5A8227A5C798007BB89B /* AppDelegate.swift */,
+				C66E5A8427A5C798007BB89B /* SceneDelegate.swift */,
+			);
+			path = Globals;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C66E5A7E27A5C798007BB89B /* Totality Corp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C66E5A9327A5C798007BB89B /* Build configuration list for PBXNativeTarget "Totality Corp" */;
+			buildPhases = (
+				C66E5A7B27A5C798007BB89B /* Sources */,
+				C66E5A7C27A5C798007BB89B /* Frameworks */,
+				C66E5A7D27A5C798007BB89B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Totality Corp";
+			productName = "Totality Corp";
+			productReference = C66E5A7F27A5C798007BB89B /* Totality Corp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C66E5A7727A5C798007BB89B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					C66E5A7E27A5C798007BB89B = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = C66E5A7A27A5C798007BB89B /* Build configuration list for PBXProject "Totality Corp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C66E5A7627A5C798007BB89B;
+			productRefGroup = C66E5A8027A5C798007BB89B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C66E5A7E27A5C798007BB89B /* Totality Corp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C66E5A7D27A5C798007BB89B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66E5A8F27A5C798007BB89B /* LaunchScreen.storyboard in Resources */,
+				C66E5A8C27A5C798007BB89B /* Assets.xcassets in Resources */,
+				C66E5A9D27A5CC23007BB89B /* MainTableViewCell.xib in Resources */,
+				C66E5A8A27A5C798007BB89B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C66E5A7B27A5C798007BB89B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66E5A8727A5C798007BB89B /* ViewController.swift in Sources */,
+				C66E5A8327A5C798007BB89B /* AppDelegate.swift in Sources */,
+				C66E5A9C27A5CC23007BB89B /* MainTableViewCell.swift in Sources */,
+				C66E5A8527A5C798007BB89B /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C66E5A8827A5C798007BB89B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C66E5A8927A5C798007BB89B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C66E5A8D27A5C798007BB89B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C66E5A8E27A5C798007BB89B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C66E5A9127A5C798007BB89B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C66E5A9227A5C798007BB89B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C66E5A9427A5C798007BB89B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AJ7963Q2TW;
+				INFOPLIST_FILE = "Totality Corp/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kartikey.Totality-Corp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C66E5A9527A5C798007BB89B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AJ7963Q2TW;
+				INFOPLIST_FILE = "Totality Corp/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kartikey.Totality-Corp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C66E5A7A27A5C798007BB89B /* Build configuration list for PBXProject "Totality Corp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C66E5A9127A5C798007BB89B /* Debug */,
+				C66E5A9227A5C798007BB89B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C66E5A9327A5C798007BB89B /* Build configuration list for PBXNativeTarget "Totality Corp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C66E5A9427A5C798007BB89B /* Debug */,
+				C66E5A9527A5C798007BB89B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C66E5A7727A5C798007BB89B /* Project object */;
+}

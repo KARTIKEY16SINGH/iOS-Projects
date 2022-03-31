@@ -22,6 +22,7 @@
 		C6B813242674CAFB001F6E57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6B813222674CAFB001F6E57 /* Main.storyboard */; };
 		C6B813262674CAFB001F6E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6B813252674CAFB001F6E57 /* Assets.xcassets */; };
 		C6B813292674CAFB001F6E57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6B813272674CAFB001F6E57 /* LaunchScreen.storyboard */; };
+		C6DCB28A26872D3F0083FFD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6DCB28926872D3F0083FFD4 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		C6B813252674CAFB001F6E57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6B813282674CAFB001F6E57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6B8132A2674CAFB001F6E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6DCB28926872D3F0083FFD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D035E95DAE38AF499F42272E /* Pods_Smack_Chat_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack_Chat_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5E93AB82CB7B143E5B1272 /* Pods-Smack Chat App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack Chat App.release.xcconfig"; path = "Target Support Files/Pods-Smack Chat App/Pods-Smack Chat App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +138,7 @@
 		C6B8131B2674CAFB001F6E57 /* Smack Chat App */ = {
 			isa = PBXGroup;
 			children = (
+				C6DCB28926872D3F0083FFD4 /* GoogleService-Info.plist */,
 				C699CABB2675C8B6005E5336 /* Views */,
 				C699CABA2675C8B0005E5336 /* Model */,
 				C699CAB92675C8A5005E5336 /* Controllers */,
@@ -224,6 +227,7 @@
 				C6B813242674CAFB001F6E57 /* Main.storyboard in Resources */,
 				C61ACD272684CD0A008CB3C1 /* CreateAccountStoryboard.storyboard in Resources */,
 				C605B3742679060000A8AE9B /* LoginStoryboard.storyboard in Resources */,
+				C6DCB28A26872D3F0083FFD4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
