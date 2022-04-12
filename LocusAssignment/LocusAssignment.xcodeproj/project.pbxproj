@@ -14,6 +14,9 @@
 		C618F26028047AF2008BD21F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C618F25F28047AF2008BD21F /* Assets.xcassets */; };
 		C618F26328047AF2008BD21F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C618F26128047AF2008BD21F /* LaunchScreen.storyboard */; };
 		C618F26C280480DC008BD21F /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C618F26B280480DC008BD21F /* UnderlinedTextField.swift */; };
+		C661B7522805DEAF00BDAFE5 /* WeatherApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661B7512805DEAF00BDAFE5 /* WeatherApiRepository.swift */; };
+		C661B7552805E0F100BDAFE5 /* HTTPUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661B7542805E0F100BDAFE5 /* HTTPUtility.swift */; };
+		C661B7582805E9C200BDAFE5 /* WeatherApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661B7572805E9C200BDAFE5 /* WeatherApiModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		C618F26228047AF2008BD21F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C618F26428047AF2008BD21F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C618F26B280480DC008BD21F /* UnderlinedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
+		C661B7512805DEAF00BDAFE5 /* WeatherApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiRepository.swift; sourceTree = "<group>"; };
+		C661B7542805E0F100BDAFE5 /* HTTPUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPUtility.swift; sourceTree = "<group>"; };
+		C661B7572805E9C200BDAFE5 /* WeatherApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,9 @@
 		C618F25528047AF1008BD21F /* LocusAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				C661B7562805E9A700BDAFE5 /* Models */,
+				C661B7532805E0DE00BDAFE5 /* Globals */,
+				C661B74F2805DE8200BDAFE5 /* Repositories */,
 				C618F26A28048099008BD21F /* Views */,
 				C618F25628047AF1008BD21F /* AppDelegate.swift */,
 				C618F25828047AF1008BD21F /* SceneDelegate.swift */,
@@ -76,6 +85,38 @@
 				C618F26B280480DC008BD21F /* UnderlinedTextField.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C661B74F2805DE8200BDAFE5 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C661B7502805DE8F00BDAFE5 /* WeatherApiRepository */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C661B7502805DE8F00BDAFE5 /* WeatherApiRepository */ = {
+			isa = PBXGroup;
+			children = (
+				C661B7512805DEAF00BDAFE5 /* WeatherApiRepository.swift */,
+			);
+			path = WeatherApiRepository;
+			sourceTree = "<group>";
+		};
+		C661B7532805E0DE00BDAFE5 /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				C661B7542805E0F100BDAFE5 /* HTTPUtility.swift */,
+			);
+			path = Globals;
+			sourceTree = "<group>";
+		};
+		C661B7562805E9A700BDAFE5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C661B7572805E9C200BDAFE5 /* WeatherApiModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,8 +191,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C618F25B28047AF1008BD21F /* ViewController.swift in Sources */,
+				C661B7582805E9C200BDAFE5 /* WeatherApiModel.swift in Sources */,
 				C618F25728047AF1008BD21F /* AppDelegate.swift in Sources */,
+				C661B7522805DEAF00BDAFE5 /* WeatherApiRepository.swift in Sources */,
 				C618F25928047AF1008BD21F /* SceneDelegate.swift in Sources */,
+				C661B7552805E0F100BDAFE5 /* HTTPUtility.swift in Sources */,
 				C618F26C280480DC008BD21F /* UnderlinedTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
