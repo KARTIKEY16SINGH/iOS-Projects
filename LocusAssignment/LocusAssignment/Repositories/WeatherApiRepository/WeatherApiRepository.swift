@@ -23,14 +23,12 @@ struct WeatherApiRepository {
         return urlComponent.url
     }
     
-    func fetch(_ cityName: String, completionHandler: (WeatherApiModel?)->Void) {
+    func fetch(_ cityName: String, completionHandler: @escaping (WeatherApiModel?)->Void) {
         var urlQueries: [URLQueryItem] = [URLQueryItem(name: "q", value: cityName)]
-        urlQueries.append(URLQueryItem(name: "appId", value: ""))
+        urlQueries.append(URLQueryItem(name: "appId", value: GlobalConstants.weatherApiKey))
         guard let apiURL = getURL(urlQueries) else {
             return
         }
-        _httpUtility.getApi(url: apiURL, type: WeatherApiModel.self) { weatherResponse in
-            completionHandler(weatherResponse)
-        }
+        _httpUtility.getApi(url: apiURL, type: WeatherApiModel.self, completionHandler: completionHandler)
     }
 }

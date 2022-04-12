@@ -30,7 +30,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecN-Xx-kir">
-                                <rect key="frame" x="67" y="458" width="280.5" height="37.5"/>
+                                <rect key="frame" x="40" y="458" width="334" height="37.5"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Lookup">
@@ -39,6 +39,9 @@
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="lookupButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0hC-Dy-r9E"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -46,17 +49,21 @@
                         <constraints>
                             <constraint firstItem="RAm-ft-Bng" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7KH-sZ-We8"/>
                             <constraint firstItem="RAm-ft-Bng" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="HUm-Us-0zW"/>
+                            <constraint firstItem="ecN-Xx-kir" firstAttribute="leading" secondItem="RAm-ft-Bng" secondAttribute="leading" constant="20" id="K0V-CD-Nro"/>
                             <constraint firstItem="ecN-Xx-kir" firstAttribute="top" secondItem="RAm-ft-Bng" secondAttribute="bottom" constant="20" id="Lyu-0g-LoA"/>
                             <constraint firstItem="ecN-Xx-kir" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OHQ-e4-Pma"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ecN-Xx-kir" secondAttribute="bottom" constant="366.5" id="QAO-3E-O9E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RAm-ft-Bng" secondAttribute="trailing" constant="20" id="RXh-ib-oTv"/>
-                            <constraint firstItem="ecN-Xx-kir" firstAttribute="width" secondItem="RAm-ft-Bng" secondAttribute="width" multiplier="0.75" id="i8m-YT-rZm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityTextField" destination="RAm-ft-Bng" id="Q8M-un-hB4"/>
+                        <outlet property="lookupButton" destination="ecN-Xx-kir" id="hIo-OW-r7m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="67.633928571428569"/>
+            <point key="canvasLocation" x="142" y="45"/>
         </scene>
     </scenes>
     <designables>

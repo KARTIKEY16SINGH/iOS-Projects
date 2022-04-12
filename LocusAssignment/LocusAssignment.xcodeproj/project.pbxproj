@@ -17,6 +17,7 @@
 		C661B7522805DEAF00BDAFE5 /* WeatherApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661B7512805DEAF00BDAFE5 /* WeatherApiRepository.swift */; };
 		C661B7552805E0F100BDAFE5 /* HTTPUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661B7542805E0F100BDAFE5 /* HTTPUtility.swift */; };
 		C661B7582805E9C200BDAFE5 /* WeatherApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661B7572805E9C200BDAFE5 /* WeatherApiModel.swift */; };
+		C661B75A2805F6A300BDAFE5 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661B7592805F6A300BDAFE5 /* GlobalConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C661B7512805DEAF00BDAFE5 /* WeatherApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiRepository.swift; sourceTree = "<group>"; };
 		C661B7542805E0F100BDAFE5 /* HTTPUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPUtility.swift; sourceTree = "<group>"; };
 		C661B7572805E9C200BDAFE5 /* WeatherApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiModel.swift; sourceTree = "<group>"; };
+		C661B7592805F6A300BDAFE5 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				C661B7542805E0F100BDAFE5 /* HTTPUtility.swift */,
+				C661B7592805F6A300BDAFE5 /* GlobalConstants.swift */,
 			);
 			path = Globals;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				C661B7522805DEAF00BDAFE5 /* WeatherApiRepository.swift in Sources */,
 				C618F25928047AF1008BD21F /* SceneDelegate.swift in Sources */,
 				C661B7552805E0F100BDAFE5 /* HTTPUtility.swift in Sources */,
+				C661B75A2805F6A300BDAFE5 /* GlobalConstants.swift in Sources */,
 				C618F26C280480DC008BD21F /* UnderlinedTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
