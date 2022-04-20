@@ -15,6 +15,7 @@ struct HTTPUtility {
                 completionHandler?(nil)
                 return
             }
+            dump(String(data: data, encoding: .utf8))
             do {
                 let decodedResponse = try JSONDecoder().decode(type, from: data)
                 completionHandler?(decodedResponse)

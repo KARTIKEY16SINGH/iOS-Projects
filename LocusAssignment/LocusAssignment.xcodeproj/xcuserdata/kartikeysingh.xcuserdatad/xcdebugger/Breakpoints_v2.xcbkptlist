@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "5FA72630-2A0D-4523-A3EA-92A7E157A170"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D8AC583B-43C0-4929-88C1-606FD57BED1E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LocusAssignment/Repositories/WeatherApiRepository/WeatherApiRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "fetch(_:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "91FB6674-A899-4929-94E0-6610B3EDB2FE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LocusAssignment/Globals/HTTPUtility.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "getApi(url:type:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "91FB6674-A899-4929-94E0-6610B3EDB2FE - 2a7dd1b20149aeb0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in LocusAssignment.HTTPUtility.getApi&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(url: Foundation.URL, type: &#x3c4;_0_0.Type, completionHandler: Swift.Optional&lt;(Swift.Optional&lt;&#x3c4;_0_0&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "LocusAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kartikeysingh/Documents/GitHub/iOS-Project/iOS-Projects/LocusAssignment/LocusAssignment/Globals/HTTPUtility.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  uuid = "91FB6674-A899-4929-94E0-6610B3EDB2FE - 2a7dd1b20149aeb0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in LocusAssignment.HTTPUtility.getApi&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(url: Foundation.URL, type: &#x3c4;_0_0.Type, completionHandler: Swift.Optional&lt;(Swift.Optional&lt;&#x3c4;_0_0&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "LocusAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kartikeysingh/Documents/GitHub/iOS-Project/iOS-Projects/LocusAssignment/LocusAssignment/Globals/HTTPUtility.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "304">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
