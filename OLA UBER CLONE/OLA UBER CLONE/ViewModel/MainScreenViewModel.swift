@@ -8,9 +8,30 @@
 import Foundation
 import MapKit.MKMapItem
 
+protocol BasicSearchScreen: AnyObject {
+    func navigateToBooking()
+    func receivedSourceLocation(_ pickUp: MKMapItem)
+}
+
+protocol MainScreen: BasicSearchScreen {
+    func navigateToSeachScreen()
+    func receivedPreviousDestination()
+    func failedToReceivePreviousDestination()
+}
+
 struct MainScreenViewModel {
+    private weak var view : MainScreen?
     private var _prevDestinations: [MKMapItem]?
-    func getPickUpLocation() {} // call on viewWillAppear
+    private let _rideManager = RideManager.shared
+    init(_ view: MainScreen) {
+        self.view = view
+    }
+    func getPickUpLocation() {
+        guard let pickUp = _rideManager.getSource() else {
+            return
+        }
+        view?.receivedSourceLocation(pickUp)
+    } // call on viewWillAppear
     func searchBtnTapped() {} // navigate to search screen
     func getPreviousDestinations(){} // only called on view did load
     

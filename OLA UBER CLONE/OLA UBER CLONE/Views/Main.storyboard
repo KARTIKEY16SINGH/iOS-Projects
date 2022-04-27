@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="a6T-JT-qvy">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="a6T-JT-qvy">
                                 <rect key="frame" x="12" y="56" width="390" height="794"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CnV-Bp-hsI">
@@ -29,13 +29,19 @@
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SGt-cK-tTM">
-                                        <rect key="frame" x="0.0" y="43" width="390" height="364.5"/>
+                                        <rect key="frame" x="0.0" y="43" width="390" height="363"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="363" id="uhF-uY-uBa"/>
+                                        </constraints>
                                     </tableView>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Bn9-rp-MMs">
-                                        <rect key="frame" x="0.0" y="419.5" width="390" height="374.5"/>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bn9-rp-MMs">
+                                        <rect key="frame" x="0.0" y="418" width="390" height="376"/>
                                     </mapView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="SGt-cK-tTM" firstAttribute="top" secondItem="CnV-Bp-hsI" secondAttribute="bottom" constant="12" id="Rnc-cI-CBo"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>

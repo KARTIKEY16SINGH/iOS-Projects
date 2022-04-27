@@ -7,21 +7,26 @@
 import MapKit
 import Foundation
 
-//final class RideManager {
-//    var currRide: Ride?
-//    
-//    func startRide(from src: MKMapItem, to dst: MKMapItem) {
-//        currRide = Ride(dst, src)
-//    }
-//    
-//    private func getRoute() {
-//        let request = MKDirections.Request()
-//        request.source = currRide?.source
-//        request.destination = currRide?.destination
-//        request.transportType = .automobile
-//        let direction = MKDirections(request: request)
-//        direction.calculate { response, error in
-//            <#code#>
-//        }
-//    }
-//}
+struct Ride {
+    var source: MKMapItem?
+    var destination: MKMapItem?
+}
+
+final class RideManager {
+    static let shared = RideManager()
+    private var _currentRide: Ride!
+    
+    private init() {
+        // It will set currentRides pickUP location using MKMapItems's class func
+        // class func forCurrentLocation() -> MKMapItem
+        _currentRide = Ride(source: MKMapItem.forCurrentLocation(), destination: nil)
+    }
+    
+    func setSource(src: MKMapItem?) {}
+    func setDestination(dst: MKMapItem?) {}
+    func isReadyForBooking() -> Bool {
+        _currentRide.source != nil && _currentRide.destination != nil
+    }
+    func getSource() -> MKMapItem? {return _currentRide.source}
+    func getDestination() -> MKMapItem? {return _currentRide.destination}
+}

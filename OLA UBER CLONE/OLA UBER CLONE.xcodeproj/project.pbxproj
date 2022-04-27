@@ -21,6 +21,8 @@
 		C6837B5627AEAA5B00D86245 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6837B5527AEAA5B00D86245 /* SearchManager.swift */; };
 		C6837B5827AEC07C00D86245 /* LocationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6837B5727AEC07C00D86245 /* LocationModels.swift */; };
 		C68446272800BA5100240EBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68446262800BA5100240EBE /* Main.storyboard */; };
+		C6A135192819B104009CF565 /* LocationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A135182819B104009CF565 /* LocationItem.swift */; };
+		C6FB82C3281079B100A9FF2A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FB82C2281079B100A9FF2A /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		C6837B5527AEAA5B00D86245 /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
 		C6837B5727AEC07C00D86245 /* LocationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModels.swift; sourceTree = "<group>"; };
 		C68446262800BA5100240EBE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C6A135182819B104009CF565 /* LocationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationItem.swift; sourceTree = "<group>"; };
+		C6FB82C2281079B100A9FF2A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		C6837B3927AE6CC300D86245 /* OLA UBER CLONE */ = {
 			isa = PBXGroup;
 			children = (
+				C6A135172819B0CC009CF565 /* ModelsForViews */,
 				C68273822801F64400ED647D /* ViewModel */,
 				C65CF02F27F4D68B00786958 /* LLD */,
 				C6837B5227AE9CE400D86245 /* Managers */,
@@ -143,8 +148,17 @@
 			children = (
 				C6837B5527AEAA5B00D86245 /* SearchManager.swift */,
 				C60F830A27B7E76B0045DE9A /* RideManager.swift */,
+				C6FB82C2281079B100A9FF2A /* LocationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		C6A135172819B0CC009CF565 /* ModelsForViews */ = {
+			isa = PBXGroup;
+			children = (
+				C6A135182819B104009CF565 /* LocationItem.swift */,
+			);
+			path = ModelsForViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,11 +235,13 @@
 				C6837B5827AEC07C00D86245 /* LocationModels.swift in Sources */,
 				C68273842801F65900ED647D /* MainScreenViewModel.swift in Sources */,
 				C6837B3F27AE6CC300D86245 /* ViewController.swift in Sources */,
+				C6FB82C3281079B100A9FF2A /* LocationManager.swift in Sources */,
 				C6837B3B27AE6CC300D86245 /* AppDelegate.swift in Sources */,
 				C6837B5627AEAA5B00D86245 /* SearchManager.swift in Sources */,
 				C60F830B27B7E76B0045DE9A /* RideManager.swift in Sources */,
 				C6837B3D27AE6CC300D86245 /* SceneDelegate.swift in Sources */,
 				C6837B5427AE9FDF00D86245 /* MainSceenController.swift in Sources */,
+				C6A135192819B104009CF565 /* LocationItem.swift in Sources */,
 				C65CF03127F4D6BC00786958 /* LLD+Main+Search+Screen.swift in Sources */,
 				C68273812801F4D800ED647D /* MainScreenViewController.swift in Sources */,
 			);

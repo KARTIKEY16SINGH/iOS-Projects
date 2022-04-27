@@ -18,8 +18,10 @@ class MainScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = MainScreenViewModel()
+        viewModel = MainScreenViewModel(self)
+        viewModel.getPickUpLocation()
         viewModel.getPreviousDestinations()
+        setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,4 +31,44 @@ class MainScreenViewController: UIViewController {
     
     @IBAction func searchButtonClicked() {}
     func updatePickupOnMapView(_ pickUp: MKMapItem) {}
+    
+    private func setup() {
+        setupTableView()
+        setupMapView()
+    }
+    
+    private func setupTableView() {
+//        tableView.dataSource =
+        tableView.tableFooterView = UIView(frame: .zero)
+        let diffableDataSource = UITableViewDiffableDataSource<Int,MKMapItem>(tableView: tableView) { tableView, indexPath, itemIdentifier in
+            <#code#>
+        }
+    }
+    
+    private func setupMapView() {
+//        mapView.setUserTrackingMode(.follow, animated: true)
+//        mapView.showsUserLocation = true
+    }
+}
+
+extension MainScreenViewController : MainScreen {
+    func navigateToSeachScreen() {
+        
+    }
+    
+    func receivedPreviousDestination() {
+        
+    }
+    
+    func failedToReceivePreviousDestination() {
+        
+    }
+    
+    func navigateToBooking() {
+        
+    }
+    
+    func receivedSourceLocation(_ pickUp: MKMapItem) {
+        
+    }
 }
