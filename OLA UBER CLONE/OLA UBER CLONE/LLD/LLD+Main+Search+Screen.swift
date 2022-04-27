@@ -77,23 +77,23 @@ class LLDMainSearchScreen {
 //        func getLocation(forIndex index:Int) {} // MARK: This function will return data like Name, Address for location at provided index
 //    }
     
-    final class RideManager {
-        static let shared = RideManager()
-        private var _currentRide: Ride!
-        
-        private init() {
-            // It will set currentRides pickUP location using MKMapItems's class func
-            // class func forCurrentLocation() -> MKMapItem
-        }
-        
-        func setSource(src: MKMapItem?) {}
-        func setDestination(dst: MKMapItem?) {}
-        func isReadyForBooking() -> Bool {
-            _currentRide.source != nil && _currentRide.destination != nil
-        }
-        func getSource() -> MKMapItem? {return _currentRide.source}
-        func getDestination() -> MKMapItem? {return _currentRide.destination}
-    }
+//    final class RideManager {
+//        static let shared = RideManager()
+//        private var _currentRide: Ride!
+//        
+//        private init() {
+//            // It will set currentRides pickUP location using MKMapItems's class func
+//            // class func forCurrentLocation() -> MKMapItem
+//        }
+//        
+//        func setSource(src: MKMapItem?) {}
+//        func setDestination(dst: MKMapItem?) {}
+//        func isReadyForBooking() -> Bool {
+//            _currentRide.source != nil && _currentRide.destination != nil
+//        }
+//        func getSource() -> MKMapItem? {return _currentRide.source}
+//        func getDestination() -> MKMapItem? {return _currentRide.destination}
+//    }
     
     struct Ride {
         var source: MKMapItem?
