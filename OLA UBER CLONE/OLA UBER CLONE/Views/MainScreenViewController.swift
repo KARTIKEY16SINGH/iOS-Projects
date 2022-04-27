@@ -15,7 +15,7 @@ class MainScreenViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     private var viewModel: MainScreenViewModel!
-    
+    private let tableViewCellResuseIdentifier: String = "locationCell"
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = MainScreenViewModel(self)
@@ -40,9 +40,17 @@ class MainScreenViewController: UIViewController {
     private func setupTableView() {
 //        tableView.dataSource =
         tableView.tableFooterView = UIView(frame: .zero)
-        let diffableDataSource = UITableViewDiffableDataSource<Int,MKMapItem>(tableView: tableView) { tableView, indexPath, itemIdentifier in
-            <#code#>
+        let diffableDataSource = UITableViewDiffableDataSource<Int,LocationItem>(tableView: tableView) {[weak self] tableView, indexPath, itemIdentifier in
+            guard let wSelf = self, let cell = tableView.dequeueReusableCell(withIdentifier: wSelf.tableViewCellResuseIdentifier) else {
+                print("Not able to deque reusable cell")
+                return nil
+            }
+            cell.textLabel?.text = itemIdentifier.title
+            cell.detailTextLabel?.text = itemIdentifier.address
+            cell.imageView?.image = UIImage(systemName: "location.fill")
+            return cell
         }
+        tableView.dataSource = diffableDataSource
     }
     
     private func setupMapView() {

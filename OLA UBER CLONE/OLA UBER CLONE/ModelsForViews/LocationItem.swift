@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LocationItem {
+struct LocationItem: Hashable {
     var title: String
     var address: String
 }
