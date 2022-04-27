@@ -19,21 +19,31 @@ protocol MainScreen: BasicSearchScreen {
     func failedToReceivePreviousDestination()
 }
 
-struct MainScreenViewModel {
-    private weak var view : MainScreen?
-    private var _prevDestinations: [MKMapItem]?
+class MainScreenViewModel {
+    private weak var _view : MainScreen?
+    private var _prevDestinations: [Location]?
     private let _rideManager = RideManager.shared
+    private let _prevDestApiRepo = PreviousDestinationApiRepository()
     init(_ view: MainScreen) {
-        self.view = view
+        self._view = view
     }
     func getPickUpLocation() {
         guard let pickUp = _rideManager.getSource() else {
             return
         }
-        view?.receivedSourceLocation(pickUp)
+        _view?.receivedSourceLocation(pickUp)
     } // call on viewWillAppear
     func searchBtnTapped() {} // navigate to search screen
-    func getPreviousDestinations(){} // only called on view did load
+    func getPreviousDestinations(){
+        _prevDestApiRepo.fetchAllData {[weak self] locationArray in
+            guard let wSelf = self else {return}
+            if let locationArray = locationArray {
+                wSelf._prevDestinations = locationArray.locations
+            } else {
+                wSelf._view?.failedToReceivePreviousDestination()
+            }
+        }
+    } // only called on view did load
     
     // Table View Related functions
     func setDestination(atIndex index: Int) {} // Will Set Destination using RideManager and navigate to booking screen if isReadyForBooking

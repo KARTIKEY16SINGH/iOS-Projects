@@ -21,22 +21,22 @@
                                 <rect key="frame" x="12" y="56" width="390" height="794"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CnV-Bp-hsI">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="142"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="loca" title="Button"/>
                                         <connections>
                                             <action selector="searchButtonClicked" destination="Y6W-OH-hqX" eventType="touchUpInside" id="PCG-ih-pKC"/>
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SGt-cK-tTM">
-                                        <rect key="frame" x="0.0" y="43" width="390" height="363"/>
+                                        <rect key="frame" x="0.0" y="154" width="390" height="363"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="363" id="uhF-uY-uBa"/>
                                         </constraints>
                                     </tableView>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bn9-rp-MMs">
-                                        <rect key="frame" x="0.0" y="418" width="390" height="376"/>
+                                        <rect key="frame" x="0.0" y="529" width="390" height="265"/>
                                     </mapView>
                                 </subviews>
                                 <constraints>
@@ -66,6 +66,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="loca" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -20,3 +20,14 @@ import Foundation
 //        driver = ""
 //    }
 //}
+
+struct Location: Decodable {
+    var latitude: CLLocationDegrees
+    var longitude: CLLocationDegrees
+    var name: String
+    var postalAddress: String
+}
+
+struct LocationArray: Decodable {
+    var locations: [Location]
+}

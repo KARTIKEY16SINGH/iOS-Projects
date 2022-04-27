@@ -22,6 +22,8 @@
 		C6837B5827AEC07C00D86245 /* LocationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6837B5727AEC07C00D86245 /* LocationModels.swift */; };
 		C68446272800BA5100240EBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68446262800BA5100240EBE /* Main.storyboard */; };
 		C6A135192819B104009CF565 /* LocationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A135182819B104009CF565 /* LocationItem.swift */; };
+		C6A1351C2819B62E009CF565 /* PreviousDestinationApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1351B2819B62E009CF565 /* PreviousDestinationApiRepository.swift */; };
+		C6A1351F2819B79B009CF565 /* HTTPUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1351E2819B79B009CF565 /* HTTPUtility.swift */; };
 		C6FB82C3281079B100A9FF2A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FB82C2281079B100A9FF2A /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		C6837B5727AEC07C00D86245 /* LocationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModels.swift; sourceTree = "<group>"; };
 		C68446262800BA5100240EBE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C6A135182819B104009CF565 /* LocationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationItem.swift; sourceTree = "<group>"; };
+		C6A1351B2819B62E009CF565 /* PreviousDestinationApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousDestinationApiRepository.swift; sourceTree = "<group>"; };
+		C6A1351E2819B79B009CF565 /* HTTPUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPUtility.swift; sourceTree = "<group>"; };
 		C6FB82C2281079B100A9FF2A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +96,8 @@
 		C6837B3927AE6CC300D86245 /* OLA UBER CLONE */ = {
 			isa = PBXGroup;
 			children = (
+				C6A1351D2819B789009CF565 /* Utilities */,
+				C6A1351A2819B604009CF565 /* Repositories */,
 				C6A135172819B0CC009CF565 /* ModelsForViews */,
 				C68273822801F64400ED647D /* ViewModel */,
 				C65CF02F27F4D68B00786958 /* LLD */,
@@ -159,6 +165,22 @@
 				C6A135182819B104009CF565 /* LocationItem.swift */,
 			);
 			path = ModelsForViews;
+			sourceTree = "<group>";
+		};
+		C6A1351A2819B604009CF565 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C6A1351B2819B62E009CF565 /* PreviousDestinationApiRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C6A1351D2819B789009CF565 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C6A1351E2819B79B009CF565 /* HTTPUtility.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +262,9 @@
 				C6837B5627AEAA5B00D86245 /* SearchManager.swift in Sources */,
 				C60F830B27B7E76B0045DE9A /* RideManager.swift in Sources */,
 				C6837B3D27AE6CC300D86245 /* SceneDelegate.swift in Sources */,
+				C6A1351C2819B62E009CF565 /* PreviousDestinationApiRepository.swift in Sources */,
 				C6837B5427AE9FDF00D86245 /* MainSceenController.swift in Sources */,
+				C6A1351F2819B79B009CF565 /* HTTPUtility.swift in Sources */,
 				C6A135192819B104009CF565 /* LocationItem.swift in Sources */,
 				C65CF03127F4D6BC00786958 /* LLD+Main+Search+Screen.swift in Sources */,
 				C68273812801F4D800ED647D /* MainScreenViewController.swift in Sources */,
