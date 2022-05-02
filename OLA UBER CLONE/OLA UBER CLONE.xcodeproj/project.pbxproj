@@ -3,12 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		C60F830B27B7E76B0045DE9A /* RideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60F830A27B7E76B0045DE9A /* RideManager.swift */; };
+		C64A4962281C5D5400232692 /* FirebaseAnalytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64A4961281C5D5400232692 /* FirebaseAnalytics.xcframework */; };
+		C64A4964281C5D5800232692 /* FirebaseCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64A4963281C5D5800232692 /* FirebaseCore.xcframework */; };
+		C64A4966281C5D6000232692 /* FirebaseCoreDiagnostics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64A4965281C5D6000232692 /* FirebaseCoreDiagnostics.xcframework */; };
+		C64A4968281C5D6400232692 /* FirebaseInstallations.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64A4967281C5D6400232692 /* FirebaseInstallations.xcframework */; };
+		C64A496A281C5D6C00232692 /* GoogleAppMeasurement.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64A4969281C5D6C00232692 /* GoogleAppMeasurement.xcframework */; };
+		C64A496C281C5D8300232692 /* GoogleAppMeasurementIdentitySupport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64A496B281C5D8300232692 /* GoogleAppMeasurementIdentitySupport.xcframework */; };
+		C64A496E281C5D8D00232692 /* GoogleDataTransport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64A496D281C5D8D00232692 /* GoogleDataTransport.xcframework */; };
+		C64A4970281C5D9300232692 /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64A496F281C5D9300232692 /* GoogleUtilities.xcframework */; };
+		C64A4972281C5D9900232692 /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64A4971281C5D9900232692 /* nanopb.xcframework */; };
+		C64A4974281C5D9E00232692 /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64A4973281C5D9E00232692 /* PromisesObjC.xcframework */; };
 		C65CF03127F4D6BC00786958 /* LLD+Main+Search+Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65CF03027F4D6BC00786958 /* LLD+Main+Search+Screen.swift */; };
+		C664A6B0281C679B00EA6A54 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C664A6AF281C679B00EA6A54 /* StoreKit.framework */; };
+		C664A6B2281C67B600EA6A54 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C664A6B1281C67B600EA6A54 /* libz.tbd */; };
+		C664A6B4281C67C900EA6A54 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C664A6B3281C67C900EA6A54 /* libc++.tbd */; };
+		C664A6B6281C67D800EA6A54 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C664A6B5281C67D800EA6A54 /* libsqlite3.tbd */; };
+		C674AE4D281C6412008FC2D5 /* FirebaseDatabase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C674AE4C281C6412008FC2D5 /* FirebaseDatabase.xcframework */; };
+		C674AE4F281C6439008FC2D5 /* leveldb-library.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C674AE4E281C6439008FC2D5 /* leveldb-library.xcframework */; };
+		C67F2697281C53D0009E87C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C67F2696281C53D0009E87C5 /* GoogleService-Info.plist */; };
 		C68273812801F4D800ED647D /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68273802801F4D800ED647D /* MainScreenViewController.swift */; };
 		C68273842801F65900ED647D /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68273832801F65900ED647D /* MainScreenViewModel.swift */; };
 		C6837B3B27AE6CC300D86245 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6837B3A27AE6CC300D86245 /* AppDelegate.swift */; };
@@ -29,7 +46,26 @@
 
 /* Begin PBXFileReference section */
 		C60F830A27B7E76B0045DE9A /* RideManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideManager.swift; sourceTree = "<group>"; };
+		C64A4961281C5D5400232692 /* FirebaseAnalytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseAnalytics.xcframework; sourceTree = "<group>"; };
+		C64A4963281C5D5800232692 /* FirebaseCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseCore.xcframework; sourceTree = "<group>"; };
+		C64A4965281C5D6000232692 /* FirebaseCoreDiagnostics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseCoreDiagnostics.xcframework; sourceTree = "<group>"; };
+		C64A4967281C5D6400232692 /* FirebaseInstallations.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseInstallations.xcframework; sourceTree = "<group>"; };
+		C64A4969281C5D6C00232692 /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
+		C64A496B281C5D8300232692 /* GoogleAppMeasurementIdentitySupport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleAppMeasurementIdentitySupport.xcframework; sourceTree = "<group>"; };
+		C64A496D281C5D8D00232692 /* GoogleDataTransport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleDataTransport.xcframework; sourceTree = "<group>"; };
+		C64A496F281C5D9300232692 /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleUtilities.xcframework; sourceTree = "<group>"; };
+		C64A4971281C5D9900232692 /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
+		C64A4973281C5D9E00232692 /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
 		C65CF03027F4D6BC00786958 /* LLD+Main+Search+Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LLD+Main+Search+Screen.swift"; sourceTree = "<group>"; };
+		C664A6AF281C679B00EA6A54 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		C664A6B1281C67B600EA6A54 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		C664A6B3281C67C900EA6A54 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		C664A6B5281C67D800EA6A54 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C674AE4C281C6412008FC2D5 /* FirebaseDatabase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseDatabase.xcframework; sourceTree = "<group>"; };
+		C674AE4E281C6439008FC2D5 /* leveldb-library.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "leveldb-library.xcframework"; sourceTree = "<group>"; };
+		C67F2696281C53D0009E87C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C67F269A281C563D009E87C5 /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		C67F269B281C5671009E87C5 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		C68273802801F4D800ED647D /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		C68273832801F65900ED647D /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		C6837B3727AE6CC300D86245 /* OLA UBER CLONE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OLA UBER CLONE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +91,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C664A6B6281C67D800EA6A54 /* libsqlite3.tbd in Frameworks */,
+				C664A6B4281C67C900EA6A54 /* libc++.tbd in Frameworks */,
+				C664A6B2281C67B600EA6A54 /* libz.tbd in Frameworks */,
+				C664A6B0281C679B00EA6A54 /* StoreKit.framework in Frameworks */,
+				C64A4974281C5D9E00232692 /* PromisesObjC.xcframework in Frameworks */,
+				C64A4962281C5D5400232692 /* FirebaseAnalytics.xcframework in Frameworks */,
+				C64A496C281C5D8300232692 /* GoogleAppMeasurementIdentitySupport.xcframework in Frameworks */,
+				C64A496A281C5D6C00232692 /* GoogleAppMeasurement.xcframework in Frameworks */,
+				C64A4970281C5D9300232692 /* GoogleUtilities.xcframework in Frameworks */,
+				C674AE4D281C6412008FC2D5 /* FirebaseDatabase.xcframework in Frameworks */,
+				C64A4966281C5D6000232692 /* FirebaseCoreDiagnostics.xcframework in Frameworks */,
+				C64A496E281C5D8D00232692 /* GoogleDataTransport.xcframework in Frameworks */,
+				C64A4972281C5D9900232692 /* nanopb.xcframework in Frameworks */,
+				C64A4968281C5D6400232692 /* FirebaseInstallations.xcframework in Frameworks */,
+				C64A4964281C5D5800232692 /* FirebaseCore.xcframework in Frameworks */,
+				C674AE4F281C6439008FC2D5 /* leveldb-library.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +119,17 @@
 				C65CF03027F4D6BC00786958 /* LLD+Main+Search+Screen.swift */,
 			);
 			path = LLD;
+			sourceTree = "<group>";
+		};
+		C664A6AE281C66BF00EA6A54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C664A6B5281C67D800EA6A54 /* libsqlite3.tbd */,
+				C664A6B3281C67C900EA6A54 /* libc++.tbd */,
+				C664A6B1281C67B600EA6A54 /* libz.tbd */,
+				C664A6AF281C679B00EA6A54 /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C68273822801F64400ED647D /* ViewModel */ = {
@@ -82,6 +145,7 @@
 			children = (
 				C6837B3927AE6CC300D86245 /* OLA UBER CLONE */,
 				C6837B3827AE6CC300D86245 /* Products */,
+				C664A6AE281C66BF00EA6A54 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +160,20 @@
 		C6837B3927AE6CC300D86245 /* OLA UBER CLONE */ = {
 			isa = PBXGroup;
 			children = (
+				C67F269A281C563D009E87C5 /* Firebase.h */,
+				C64A4961281C5D5400232692 /* FirebaseAnalytics.xcframework */,
+				C64A4963281C5D5800232692 /* FirebaseCore.xcframework */,
+				C64A4965281C5D6000232692 /* FirebaseCoreDiagnostics.xcframework */,
+				C64A4967281C5D6400232692 /* FirebaseInstallations.xcframework */,
+				C64A4969281C5D6C00232692 /* GoogleAppMeasurement.xcframework */,
+				C64A496B281C5D8300232692 /* GoogleAppMeasurementIdentitySupport.xcframework */,
+				C64A496D281C5D8D00232692 /* GoogleDataTransport.xcframework */,
+				C64A496F281C5D9300232692 /* GoogleUtilities.xcframework */,
+				C64A4971281C5D9900232692 /* nanopb.xcframework */,
+				C64A4973281C5D9E00232692 /* PromisesObjC.xcframework */,
+				C674AE4C281C6412008FC2D5 /* FirebaseDatabase.xcframework */,
+				C674AE4E281C6439008FC2D5 /* leveldb-library.xcframework */,
+				C67F2696281C53D0009E87C5 /* GoogleService-Info.plist */,
 				C6A1351D2819B789009CF565 /* Utilities */,
 				C6A1351A2819B604009CF565 /* Repositories */,
 				C6A135172819B0CC009CF565 /* ModelsForViews */,
@@ -108,6 +186,7 @@
 				C6837B4E27AE9CBA00D86245 /* Views */,
 				C6837B4327AE6CC300D86245 /* Assets.xcassets */,
 				C6837B4827AE6CC300D86245 /* Info.plist */,
+				C67F269B281C5671009E87C5 /* module.modulemap */,
 			);
 			path = "OLA UBER CLONE";
 			sourceTree = "<group>";
@@ -242,6 +321,7 @@
 			files = (
 				C6837B4727AE6CC300D86245 /* LaunchScreen.storyboard in Resources */,
 				C6837B4427AE6CC300D86245 /* Assets.xcassets in Resources */,
+				C67F2697281C53D0009E87C5 /* GoogleService-Info.plist in Resources */,
 				C6837B4227AE6CC300D86245 /* SearchScreen.storyboard in Resources */,
 				C68446272800BA5100240EBE /* Main.storyboard in Resources */,
 			);
@@ -421,10 +501,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kartikey.OLA-UBER-CLONE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/OLA UBER CLONE/module.modulemap\"";
 			};
 			name = Debug;
 		};
@@ -440,10 +522,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kartikey.OLA-UBER-CLONE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/OLA UBER CLONE/module.modulemap\"";
 			};
 			name = Release;
 		};
