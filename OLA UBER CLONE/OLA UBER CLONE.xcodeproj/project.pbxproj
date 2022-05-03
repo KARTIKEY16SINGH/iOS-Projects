@@ -25,6 +25,7 @@
 		C664A6B6281C67D800EA6A54 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C664A6B5281C67D800EA6A54 /* libsqlite3.tbd */; };
 		C674AE4D281C6412008FC2D5 /* FirebaseDatabase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C674AE4C281C6412008FC2D5 /* FirebaseDatabase.xcframework */; };
 		C674AE4F281C6439008FC2D5 /* leveldb-library.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C674AE4E281C6439008FC2D5 /* leveldb-library.xcframework */; };
+		C67E72BA28204D9D00CD2E73 /* FirebaseDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67E72B928204D9D00CD2E73 /* FirebaseDBManager.swift */; };
 		C67F2697281C53D0009E87C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C67F2696281C53D0009E87C5 /* GoogleService-Info.plist */; };
 		C68273812801F4D800ED647D /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68273802801F4D800ED647D /* MainScreenViewController.swift */; };
 		C68273842801F65900ED647D /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68273832801F65900ED647D /* MainScreenViewModel.swift */; };
@@ -63,6 +64,7 @@
 		C664A6B5281C67D800EA6A54 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		C674AE4C281C6412008FC2D5 /* FirebaseDatabase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseDatabase.xcframework; sourceTree = "<group>"; };
 		C674AE4E281C6439008FC2D5 /* leveldb-library.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "leveldb-library.xcframework"; sourceTree = "<group>"; };
+		C67E72B928204D9D00CD2E73 /* FirebaseDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDBManager.swift; sourceTree = "<group>"; };
 		C67F2696281C53D0009E87C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C67F269A281C563D009E87C5 /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
 		C67F269B281C5671009E87C5 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				C6837B5527AEAA5B00D86245 /* SearchManager.swift */,
 				C60F830A27B7E76B0045DE9A /* RideManager.swift */,
 				C6FB82C2281079B100A9FF2A /* LocationManager.swift */,
+				C67E72B928204D9D00CD2E73 /* FirebaseDBManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				C6837B5627AEAA5B00D86245 /* SearchManager.swift in Sources */,
 				C60F830B27B7E76B0045DE9A /* RideManager.swift in Sources */,
 				C6837B3D27AE6CC300D86245 /* SceneDelegate.swift in Sources */,
+				C67E72BA28204D9D00CD2E73 /* FirebaseDBManager.swift in Sources */,
 				C6A1351C2819B62E009CF565 /* PreviousDestinationApiRepository.swift in Sources */,
 				C6837B5427AE9FDF00D86245 /* MainSceenController.swift in Sources */,
 				C6A1351F2819B79B009CF565 /* HTTPUtility.swift in Sources */,

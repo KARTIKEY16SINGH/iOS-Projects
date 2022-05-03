@@ -13,14 +13,10 @@ protocol BasicRepository {
 }
 
 struct PreviousDestinationApiRepository: BasicRepository {
-    private let _api = "https://something"
-    func fetchAllData(completionHandler: @escaping (LocationArray?) -> Void) {
-        if let url = URL(string: _api) {
-            HTTPUtility.getApi(url, type: LocationArray.self, completionHandler: completionHandler)
-        } else {
-            completionHandler(nil)
-        }
+    private let _apiPath = "users/userID/previousDestinations"
+    func fetchAllData(completionHandler: @escaping ([Location]?) -> Void) {
+        FirebaseDBManager.shared.getOneTimeValue(atPath: _apiPath, type: T.self, completionHandler: completionHandler)
     }
     
-    typealias T = LocationArray
+    typealias T = [Location]
 }

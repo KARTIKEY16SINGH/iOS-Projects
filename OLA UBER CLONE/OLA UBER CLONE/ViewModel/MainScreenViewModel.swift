@@ -38,7 +38,7 @@ class MainScreenViewModel {
         _prevDestApiRepo.fetchAllData {[weak self] locationArray in
             guard let wSelf = self else {return}
             if let locationArray = locationArray {
-                wSelf._prevDestinations = locationArray.locations
+                wSelf._prevDestinations = locationArray
             } else {
                 wSelf._view?.failedToReceivePreviousDestination()
             }
