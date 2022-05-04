@@ -130,6 +130,18 @@
 				C664A6B3281C67C900EA6A54 /* libc++.tbd */,
 				C664A6B1281C67B600EA6A54 /* libz.tbd */,
 				C664A6AF281C679B00EA6A54 /* StoreKit.framework */,
+				C64A4961281C5D5400232692 /* FirebaseAnalytics.xcframework */,
+				C64A4963281C5D5800232692 /* FirebaseCore.xcframework */,
+				C64A4965281C5D6000232692 /* FirebaseCoreDiagnostics.xcframework */,
+				C64A4967281C5D6400232692 /* FirebaseInstallations.xcframework */,
+				C64A4969281C5D6C00232692 /* GoogleAppMeasurement.xcframework */,
+				C64A496B281C5D8300232692 /* GoogleAppMeasurementIdentitySupport.xcframework */,
+				C64A496D281C5D8D00232692 /* GoogleDataTransport.xcframework */,
+				C64A496F281C5D9300232692 /* GoogleUtilities.xcframework */,
+				C64A4971281C5D9900232692 /* nanopb.xcframework */,
+				C64A4973281C5D9E00232692 /* PromisesObjC.xcframework */,
+				C674AE4C281C6412008FC2D5 /* FirebaseDatabase.xcframework */,
+				C674AE4E281C6439008FC2D5 /* leveldb-library.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,18 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				C67F269A281C563D009E87C5 /* Firebase.h */,
-				C64A4961281C5D5400232692 /* FirebaseAnalytics.xcframework */,
-				C64A4963281C5D5800232692 /* FirebaseCore.xcframework */,
-				C64A4965281C5D6000232692 /* FirebaseCoreDiagnostics.xcframework */,
-				C64A4967281C5D6400232692 /* FirebaseInstallations.xcframework */,
-				C64A4969281C5D6C00232692 /* GoogleAppMeasurement.xcframework */,
-				C64A496B281C5D8300232692 /* GoogleAppMeasurementIdentitySupport.xcframework */,
-				C64A496D281C5D8D00232692 /* GoogleDataTransport.xcframework */,
-				C64A496F281C5D9300232692 /* GoogleUtilities.xcframework */,
-				C64A4971281C5D9900232692 /* nanopb.xcframework */,
-				C64A4973281C5D9E00232692 /* PromisesObjC.xcframework */,
-				C674AE4C281C6412008FC2D5 /* FirebaseDatabase.xcframework */,
-				C674AE4E281C6439008FC2D5 /* leveldb-library.xcframework */,
 				C67F2696281C53D0009E87C5 /* GoogleService-Info.plist */,
 				C6A1351D2819B789009CF565 /* Utilities */,
 				C6A1351A2819B604009CF565 /* Repositories */,
