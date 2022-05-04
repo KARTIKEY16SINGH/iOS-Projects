@@ -17,9 +17,10 @@ protocol MainScreen: BasicSearchScreen {
     func navigateToSeachScreen()
     func receivedPreviousDestination()
     func failedToReceivePreviousDestination()
+    func receivedZeroPreviousDestination()
 }
 
-class MainScreenViewModel {
+final class MainScreenViewModel {
     private weak var _view : MainScreen?
     private var _prevDestinations: [Location]?
     private let _rideManager = RideManager.shared
@@ -39,14 +40,28 @@ class MainScreenViewModel {
             guard let wSelf = self else {return}
             if let locationArray = locationArray {
                 wSelf._prevDestinations = locationArray
+                if locationArray.count == 0 {
+                    DispatchQueue.main.async {
+                        wSelf._view?.receivedZeroPreviousDestination()
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        wSelf._view?.receivedPreviousDestination()
+                    }
+                }
             } else {
-                wSelf._view?.failedToReceivePreviousDestination()
+                DispatchQueue.main.async(execute: {wSelf._view?.failedToReceivePreviousDestination()})
             }
         }
-    } // only called on view did load
+    }
     
     // Table View Related functions
     func setDestination(atIndex index: Int) {} // Will Set Destination using RideManager and navigate to booking screen if isReadyForBooking
     func getNumberOfDestination() -> Int {return _prevDestinations?.count ?? 0}
-    func getDestination(forRow index: Int) {} // MARK: This function will return data like Name, Address for destination and provided index
+    func getDestination(forRow index: Int) -> LocationItem {
+        guard let data = _prevDestinations?[index] else {
+            return LocationItem(title: "", address: "")
+        }
+        return LocationItem(title: data.name, address: data.postalAddress)
+    }
 }

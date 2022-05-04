@@ -40,17 +40,8 @@ class MainScreenViewController: UIViewController {
     private func setupTableView() {
 //        tableView.dataSource =
         tableView.tableFooterView = UIView(frame: .zero)
-        let diffableDataSource = UITableViewDiffableDataSource<Int,LocationItem>(tableView: tableView) {[weak self] tableView, indexPath, itemIdentifier in
-            guard let wSelf = self, let cell = tableView.dequeueReusableCell(withIdentifier: wSelf.tableViewCellResuseIdentifier) else {
-                print("Not able to deque reusable cell")
-                return nil
-            }
-            cell.textLabel?.text = itemIdentifier.title
-            cell.detailTextLabel?.text = itemIdentifier.address
-            cell.imageView?.image = UIImage(systemName: "location.fill")
-            return cell
-        }
-        tableView.dataSource = diffableDataSource
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: tableViewCellResuseIdentifier)
     }
     
     private func setupMapView() {
@@ -60,16 +51,21 @@ class MainScreenViewController: UIViewController {
 }
 
 extension MainScreenViewController : MainScreen {
+    func receivedZeroPreviousDestination() {
+        tableView.isHidden = true
+    }
+    
     func navigateToSeachScreen() {
         
     }
     
     func receivedPreviousDestination() {
-        
+        tableView.isHidden = false
+        tableView.reloadData()
     }
     
     func failedToReceivePreviousDestination() {
-        
+        print("Failed to receive previous destination")
     }
     
     func navigateToBooking() {
@@ -78,5 +74,23 @@ extension MainScreenViewController : MainScreen {
     
     func receivedSourceLocation(_ pickUp: MKMapItem) {
         
+    }
+}
+
+extension MainScreenViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.getNumberOfDestination()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let itemIdentifier: LocationItem = viewModel.getDestination(forRow: indexPath.row)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellResuseIdentifier) else {
+            print("Not able to deque reusable cell")
+            return UITableViewCell()
+        }
+        cell.textLabel?.text = itemIdentifier.title
+        cell.detailTextLabel?.text = itemIdentifier.address
+        cell.imageView?.image = UIImage(systemName: "location.fill")
+        return cell
     }
 }
