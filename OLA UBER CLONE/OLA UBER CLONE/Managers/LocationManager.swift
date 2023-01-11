@@ -8,10 +8,14 @@
 import Foundation
 import CoreLocation
 
-final class LocationManager {
+final class LocationManager: NSObject {
     static let shared: LocationManager = LocationManager()
-    private init () {}
+    private override init () {
+        super.init()
+        _locationManager.delegate = self
+    }
     private let _locationManager: CLLocationManager = CLLocationManager()
+    @objc dynamic var currentLocation: CLLocation?
     
     func requestLocationAuthorization() {
         switch _locationManager.authorizationStatus {
@@ -25,6 +29,21 @@ final class LocationManager {
     }
     
     private func showPopupEnableLocationPermission() {
-        
+        MALog(printText: "")
+    }
+    
+    func requestOneTimeLocation() {
+        _locationManager.requestLocation()
+    }
+}
+
+extension LocationManager: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        MALog(printText: "locations: \(locations)")
+        currentLocation = locations.first
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        MALog(printText: "error = \(error)")
     }
 }

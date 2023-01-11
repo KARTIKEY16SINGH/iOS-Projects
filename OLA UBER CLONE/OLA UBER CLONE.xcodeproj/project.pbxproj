@@ -39,6 +39,7 @@
 		C6837B5627AEAA5B00D86245 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6837B5527AEAA5B00D86245 /* SearchManager.swift */; };
 		C6837B5827AEC07C00D86245 /* LocationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6837B5727AEC07C00D86245 /* LocationModels.swift */; };
 		C68446272800BA5100240EBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68446262800BA5100240EBE /* Main.storyboard */; };
+		C6915134282444C40094A7A9 /* Loggers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6915133282444C40094A7A9 /* Loggers.swift */; };
 		C6A135192819B104009CF565 /* LocationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A135182819B104009CF565 /* LocationItem.swift */; };
 		C6A1351C2819B62E009CF565 /* PreviousDestinationApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1351B2819B62E009CF565 /* PreviousDestinationApiRepository.swift */; };
 		C6A1351F2819B79B009CF565 /* HTTPUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1351E2819B79B009CF565 /* HTTPUtility.swift */; };
@@ -82,6 +83,7 @@
 		C6837B5527AEAA5B00D86245 /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
 		C6837B5727AEC07C00D86245 /* LocationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModels.swift; sourceTree = "<group>"; };
 		C68446262800BA5100240EBE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C6915133282444C40094A7A9 /* Loggers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggers.swift; sourceTree = "<group>"; };
 		C6A135182819B104009CF565 /* LocationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationItem.swift; sourceTree = "<group>"; };
 		C6A1351B2819B62E009CF565 /* PreviousDestinationApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousDestinationApiRepository.swift; sourceTree = "<group>"; };
 		C6A1351E2819B79B009CF565 /* HTTPUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPUtility.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				C6837B3C27AE6CC300D86245 /* SceneDelegate.swift */,
 				C6837B3A27AE6CC300D86245 /* AppDelegate.swift */,
+				C6915133282444C40094A7A9 /* Loggers.swift */,
 			);
 			path = Globals;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				C67E72BA28204D9D00CD2E73 /* FirebaseDBManager.swift in Sources */,
 				C6A1351C2819B62E009CF565 /* PreviousDestinationApiRepository.swift in Sources */,
 				C6837B5427AE9FDF00D86245 /* MainSceenController.swift in Sources */,
+				C6915134282444C40094A7A9 /* Loggers.swift in Sources */,
 				C6A1351F2819B79B009CF565 /* HTTPUtility.swift in Sources */,
 				C6A135192819B104009CF565 /* LocationItem.swift in Sources */,
 				C65CF03127F4D6BC00786958 /* LLD+Main+Search+Screen.swift in Sources */,

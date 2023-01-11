@@ -19,7 +19,7 @@ class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = MainScreenViewModel(self)
-        viewModel.getPickUpLocation()
+//        viewModel.getPickUpLocation()
         viewModel.getPreviousDestinations()
         setup()
     }
@@ -41,12 +41,12 @@ class MainScreenViewController: UIViewController {
 //        tableView.dataSource =
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: tableViewCellResuseIdentifier)
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: tableViewCellResuseIdentifier)
     }
     
     private func setupMapView() {
 //        mapView.setUserTrackingMode(.follow, animated: true)
-//        mapView.showsUserLocation = true
+        mapView.showsUserLocation = false
     }
 }
 
@@ -73,7 +73,12 @@ extension MainScreenViewController : MainScreen {
     }
     
     func receivedSourceLocation(_ pickUp: MKMapItem) {
-        
+        var pointAnnotation = MKPointAnnotation.init()
+        pointAnnotation.title = pickUp.name
+        pointAnnotation.coordinate = pickUp.placemark.coordinate
+        mapView.addAnnotation(pointAnnotation)
+        let newRegion = MKCoordinateRegion(center: pickUp.placemark.coordinate, span: mapView.region.span)
+        mapView.setRegion(newRegion, animated: true)
     }
 }
 
@@ -85,8 +90,12 @@ extension MainScreenViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let itemIdentifier: LocationItem = viewModel.getDestination(forRow: indexPath.row)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellResuseIdentifier) else {
-            print("Not able to deque reusable cell")
-            return UITableViewCell()
+            print("[MainScreenViewController] Not able to deque reusable cell")
+            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: tableViewCellResuseIdentifier)
+            cell.textLabel?.text = itemIdentifier.title
+            cell.detailTextLabel?.text = itemIdentifier.address
+            cell.imageView?.image = UIImage(systemName: "location.fill")
+            return cell
         }
         cell.textLabel?.text = itemIdentifier.title
         cell.detailTextLabel?.text = itemIdentifier.address

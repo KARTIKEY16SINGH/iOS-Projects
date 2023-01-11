@@ -19,6 +19,7 @@ final class RideManager {
     private init() {
         // It will set currentRides pickUP location using MKMapItems's class func
         // class func forCurrentLocation() -> MKMapItem
+        LocationManager.shared.requestOneTimeLocation()
         _currentRide = Ride(source: MKMapItem.forCurrentLocation(), destination: nil)
     }
     
@@ -27,6 +28,8 @@ final class RideManager {
     func isReadyForBooking() -> Bool {
         _currentRide.source != nil && _currentRide.destination != nil
     }
-    func getSource() -> MKMapItem? {return _currentRide.source}
+    func getSource() -> MKMapItem? {
+        return _currentRide.source
+    }
     func getDestination() -> MKMapItem? {return _currentRide.destination}
 }

@@ -20,20 +20,32 @@ protocol MainScreen: BasicSearchScreen {
     func receivedZeroPreviousDestination()
 }
 
-final class MainScreenViewModel {
+final class MainScreenViewModel: NSObject {
     private weak var _view : MainScreen?
     private var _prevDestinations: [Location]?
     private let _rideManager = RideManager.shared
     private let _prevDestApiRepo = PreviousDestinationApiRepository()
+    private var observation: NSKeyValueObservation?
+    @objc private let _locationManager = LocationManager.shared
     init(_ view: MainScreen) {
         self._view = view
+        super.init()
+        observation = observe(\._locationManager.currentLocation, options: [.old, .new]) {
+            object, change in
+            MALog("myDate changed from: \(change.oldValue!), updated to: \(change.newValue!)")
+            let placeMark = MKPlacemark(coordinate: change.newValue!!.coordinate)
+            let mapItem = MKMapItem(placemark: placeMark)
+            view.receivedSourceLocation(mapItem)
+        }
     }
     func getPickUpLocation() {
         guard let pickUp = _rideManager.getSource() else {
+            
             return
         }
         _view?.receivedSourceLocation(pickUp)
     } // call on viewWillAppear
+    
     func searchBtnTapped() {} // navigate to search screen
     func getPreviousDestinations(){
         _prevDestApiRepo.fetchAllData {[weak self] locationArray in
