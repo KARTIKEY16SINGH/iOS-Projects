@@ -1,7 +1,9 @@
 import UIKit
 import Foundation
-import SwiftUI
+//import SwiftUI
+//import PlaygroundSupport
 
+//PlaygroundPage.current.needsIndefiniteExecution = true
 //protocol A {
 //    func greet()
 //}
@@ -153,20 +155,73 @@ for point in sortedExpected {
 
 print(missing)
 
-func modifyTwice(_ value: inout Int, by modifier: (inout Int) -> ()) {
-    modifier(&value)
-    modifier(&value)
+//func modifyTwice(_ value: inout Int, by modifier: (inout Int) -> ()) {
+//    modifier(&value)
+//    modifier(&value)
+//}
+//
+//var count = 1
+////modifyTwice(&count) { $0 += count }   // ❌ This violates exclusivity
+//
+//func add(_ x: inout Int, _ y: Int) {
+//    x += x
+//}
+//
+//var n = 5
+//add(&n, n)
+//
+//print(n)
+
+//actor Counter {
+//    var value = 0
+//    func increment() { value += 1 }
+//}
+
+//let counter = Counter()
+//
+//Task {
+//    await counter.increment()
+//}
+//
+//Task {
+//    await counter.increment()
+//}
+//
+//print(await counter.value)
+
+struct SomeStruct {
+    var value = 0
+    
+//    lazy var closure: @Sendable () -> Void = { [ value] in
+//        value += 1   // This is allowed
+//        print("value from inside", value)
+//    }
+    
+//    mutating func someFuntion() {
+//        let closure: () -> Void = {
+//            value += 1
+//            print("value from inside", value)
+//        }
+//    }
 }
 
-var count = 1
-//modifyTwice(&count) { $0 += count }   // ❌ This violates exclusivity
+//print("value from outside", value)
 
-func add(_ x: inout Int, _ y: Int) {
-    x += x
+public class TreeNode {
+//    public static func == (lhs: TreeNode, rhs: TreeNode) -> Bool {
+//        lhs === rhs
+//    }
+    
+      public var val: Int
+      public var left: TreeNode?
+     public var right: TreeNode?
+      public init(_ val: Int) {
+          self.val = val
+          self.left = nil
+         self.right = nil
+      }
 }
 
-var n = 5
-add(&n, n)
+let treeNodeRoot = TreeNode(5)
 
-print(n)
-
+print(ObjectIdentifier(treeNodeRoot))
