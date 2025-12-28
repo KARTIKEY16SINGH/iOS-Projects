@@ -10,16 +10,29 @@ import CoreData
 
 final class TaskListViewController: UITableViewController {
     
+    private let viewModel = TaskListViewModel()
     private var tasks: [RevisionTask] = []
+    
+    private let filterControl = UISegmentedControl(items: ["Today", "All"])
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Spaced Revision"
-        navigationItem.rightBarButtonItem =
-        UIBarButtonItem(barButtonSystemItem: .add,
-                        target: self,
-                        action: #selector(add))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+            target: self,
+            action: #selector(add))
         tableView.register(TaskCell.self, forCellReuseIdentifier: "TaskCell")
+        
+        
+        navigationItem.titleView = filterControl
+        filterControl.selectedSegmentIndex = 0
+        filterControl.addTarget(
+            self,
+            action: #selector(filterChanged),
+            for: .valueChanged
+        )
+        viewModel.advanceAndRescheduleMissedTasks()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,9 +40,16 @@ final class TaskListViewController: UITableViewController {
         reload()
     }
     
-    func reload() {
-        let req: NSFetchRequest<RevisionTask> = RevisionTask.fetchRequest()
-        tasks = (try? CoreDataStack.shared.context.fetch(req)) ?? []
+    @objc private func filterChanged() {
+        reload()
+    }
+    
+    private func reload() {
+        if filterControl.selectedSegmentIndex == 0 {
+            tasks = viewModel.fetchTodayTasks()
+        } else {
+            tasks = viewModel.fetchAllTasks()
+        }
         tableView.reloadData()
     }
     
@@ -60,12 +80,18 @@ final class TaskListViewController: UITableViewController {
             task.isPaused = true
             NotificationManager.shared.cancel(task: task)
             CoreDataStack.shared.save()
+            DispatchQueue.main.async { [weak self] in
+                self?.reload()
+            }
         }
         
         cell.onResume = {
             task.isPaused = false
             NotificationManager.shared.scheduleNext(task: task)
             CoreDataStack.shared.save()
+            DispatchQueue.main.async { [weak self] in
+                self?.reload()
+            }
         }
         
         cell.onRewind = {
@@ -73,6 +99,9 @@ final class TaskListViewController: UITableViewController {
             NotificationManager.shared.cancel(task: task)
             NotificationManager.shared.scheduleNext(task: task)
             CoreDataStack.shared.save()
+            DispatchQueue.main.async { [weak self] in
+                self?.reload()
+            }
         }
         
         cell.onDelete = {

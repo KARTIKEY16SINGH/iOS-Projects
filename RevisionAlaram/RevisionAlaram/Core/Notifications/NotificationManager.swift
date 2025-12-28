@@ -30,7 +30,7 @@ final class NotificationManager {
         content.body = "Revise: \(title)"
         content.subtitle = "Revision Count: \(task.currentStep)"
         content.userInfo = ["taskId": id.uuidString]
-        content.sound = .defaultCritical
+        content.sound = .defaultRingtone
         
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: Calendar.current.dateComponents(
@@ -49,7 +49,7 @@ final class NotificationManager {
         )
         
         task.lastScheduledAt = nextDate
-        task.currentStep = step + 1
+        task.currentStep = step
         CoreDataStack.shared.save()
     }
     

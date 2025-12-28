@@ -68,5 +68,31 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
         completionHandler()
     }
+    
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler:
+        @escaping (UNNotificationPresentationOptions) -> Void
+    ) {
+        print("Foreground delivery")
+        
+        if let idString =
+            notification.request.content.userInfo["taskId"] as? String,
+           let uuid = UUID(uuidString: idString) {
+            
+            let req: NSFetchRequest<RevisionTask> = RevisionTask.fetchRequest()
+            req.predicate = NSPredicate(format: "id == %@", uuid as CVarArg)
+            
+            if let task = try? CoreDataStack.shared.context.fetch(req).first {
+                task.currentStep =
+                SpacedRevisionScheduler.advance(step: task.currentStep)
+                NotificationManager.shared.scheduleNext(task: task)
+            }
+        }
+        
+        completionHandler([.banner, .sound])
+    }
+
 }
 
