@@ -12,8 +12,9 @@ final class TaskListViewController: UITableViewController {
     
     private let viewModel = TaskListViewModel()
     private var tasks: [RevisionTask] = []
+    private var selectedDate: Date? = nil
     
-    private let filterControl = UISegmentedControl(items: ["Today", "All"])
+    private let filterControl = UISegmentedControl(items: ["Today", "All", "Pick Date"])
 
     
     override func viewDidLoad() {
@@ -41,17 +42,84 @@ final class TaskListViewController: UITableViewController {
     }
     
     @objc private func filterChanged() {
-        reload()
+        switch filterControl.selectedSegmentIndex {
+        case 0: // Today
+            selectedDate = nil
+            reload()
+            
+        case 1: // All
+            selectedDate = nil
+            reload()
+            
+        case 2: // Pick Date
+            showDatePicker()   // ✅ CALLED HERE
+            
+        default:
+            break
+        }
     }
+
+    
+    private func showDatePicker() {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .date
+        picker.preferredDatePickerStyle = .wheels
+        
+        let alert = UIAlertController(
+            title: "Select Date",
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        
+        alert.view.addSubview(picker)
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            picker.centerXAnchor.constraint(equalTo: alert.view.centerXAnchor),
+            picker.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 20),
+            picker.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -60)
+        ])
+        
+        alert.addAction(
+            UIAlertAction(title: "Show Tasks", style: .default) { _ in
+                self.selectedDate = picker.date
+                self.reload()
+            }
+        )
+        
+        alert.addAction(
+            UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                self.filterControl.selectedSegmentIndex = 0
+                self.reload()
+            }
+        )
+        
+        present(alert, animated: true)
+    }
+
     
     private func reload() {
-        if filterControl.selectedSegmentIndex == 0 {
+        switch filterControl.selectedSegmentIndex {
+        case 0:
             tasks = viewModel.fetchTodayTasks()
-        } else {
+            
+        case 1:
             tasks = viewModel.fetchAllTasks()
+            
+        case 2:
+            if let date = selectedDate {
+                tasks = viewModel.fetchTasks(for: date)
+            } else {
+                tasks = []
+            }
+            
+        default:
+            tasks = []
         }
+        
         tableView.reloadData()
     }
+
     
     @objc func add() {
         navigationController?.pushViewController(AddTaskViewController(), animated: true)

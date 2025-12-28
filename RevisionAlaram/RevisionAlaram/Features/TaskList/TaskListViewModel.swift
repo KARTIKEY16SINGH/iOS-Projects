@@ -98,13 +98,21 @@ final class TaskListViewModel {
     
     func fetchTodayTasks() -> [RevisionTask] {
         let (start, end) = Date.todayFrom8AMRange()
-        
+        return fetchTasks(from: start, to: end)
+    }
+    
+    func fetchTasks(for date: Date) -> [RevisionTask] {
+        let (start, end) = Date.revisionWindow(for: date)
+        return fetchTasks(from: start, to: end)
+    }
+    
+    private func fetchTasks(from start: Date, to end: Date) -> [RevisionTask] {
         let request: NSFetchRequest<RevisionTask> = RevisionTask.fetchRequest()
         request.predicate = NSPredicate(
             format: """
+            isPaused == NO AND
             lastScheduledAt >= %@ AND
-            lastScheduledAt < %@ AND
-            isPaused == NO
+            lastScheduledAt < %@
             """,
             start as NSDate,
             end as NSDate
@@ -166,6 +174,27 @@ extension Date {
             return (adjustedStart, adjustedEnd)
         }
         debugPrint("Date todayFrom8AMRange start -> \(start) , end -> \(end) ")
+        return (start, end)
+    }
+}
+
+extension Date {
+    
+    /// 08:00 of the given date → 08:00 of next day
+    static func revisionWindow(for date: Date) -> (start: Date, end: Date) {
+        let calendar = Calendar.current
+        
+        var components = calendar.dateComponents(
+            [.year, .month, .day],
+            from: date
+        )
+        components.hour = 8
+        components.minute = 0
+        components.second = 0
+        
+        let start = calendar.date(from: components)!
+        let end = calendar.date(byAdding: .day, value: 1, to: start)!
+        
         return (start, end)
     }
 }
