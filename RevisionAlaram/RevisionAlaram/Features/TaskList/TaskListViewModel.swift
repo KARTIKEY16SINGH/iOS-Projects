@@ -198,3 +198,18 @@ extension Date {
         return (start, end)
     }
 }
+
+extension RevisionTask {
+    func readableDescription() {
+        print()
+        print(self.id, terminator: "\t")
+        print(self.title, terminator: "\t")
+        print(self.createdAt, terminator: "\t")
+        print(self.isActive, terminator: "\t")
+        print(self.currentStep, terminator: "\t")
+        print(self.isPaused, terminator: "\t")
+        print(self.lastScheduledAt, terminator: "\t")
+        print()
+        print()
+    }
+}

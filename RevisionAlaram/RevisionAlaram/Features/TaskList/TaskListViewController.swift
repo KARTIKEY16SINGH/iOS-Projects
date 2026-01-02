@@ -116,7 +116,10 @@ final class TaskListViewController: UITableViewController {
         default:
             tasks = []
         }
-        
+        debugPrint("Current Task Items")
+        for task in tasks {
+            print(task.readableDescription())
+        }
         tableView.reloadData()
     }
 
