@@ -1,5 +1,5 @@
 //
-//  DynamicHeightCells.swift
+//  FixedCellHeight+VerticalConstraintPressure.swift
 //  UIImplementation
 //
 //  Created by Iron Man on 02/01/26.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-final class DynamicHeightCellsViewController: UIViewController {
+final class FixedHeightCellsViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.estimatedRowHeight = 44
-//        tableView.rowHeight = 44
+        tableView.rowHeight = 80
         return tableView
     }()
     
@@ -34,25 +34,24 @@ final class DynamicHeightCellsViewController: UIViewController {
     }
 }
 
-extension DynamicHeightCellsViewController: UITableViewDataSource {
+extension FixedHeightCellsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        ArticleDataSource.makeData().count
+        MessageDataSource.makeData().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: DynamicHeightTableViewCell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell") as? DynamicHeightTableViewCell ?? .init(style: .default, reuseIdentifier: "tableViewCell")
-        cell.titleLabel.text = ArticleDataSource.makeData()[indexPath.row].title
-        cell.descriptionLabel.text = ArticleDataSource.makeData()[indexPath.row].description
+        let cell: FixedHeightTableViewCell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell") as? FixedHeightTableViewCell ?? .init(style: .default, reuseIdentifier: "tableViewCell")
+        cell.titleLabel.text = MessageDataSource.makeData()[indexPath.row].title
+        cell.descriptionLabel.text = MessageDataSource.makeData()[indexPath.row].subtitle
         
         return cell
     }
 }
 
-final class DynamicHeightTableViewCell: UITableViewCell {
+final class FixedHeightTableViewCell: UITableViewCell {
     var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
         return label
     }()
     
@@ -80,44 +79,42 @@ final class DynamicHeightTableViewCell: UITableViewCell {
         descriptionLabel.text = ""
     }
     
-    let padding: CGFloat = 16
+    let padding: CGFloat = 8
+    let spacing: CGFloat = 4
     
     private func layoutLabels() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: padding),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: padding),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -padding),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
             
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: padding),
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: spacing),
             descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -padding)
+            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding)
         ])
         titleLabel.setContentHuggingPriority(.required, for: .vertical)
         descriptionLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
+        titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+        descriptionLabel.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
     }
 }
 
-
-struct Article {
+struct Message {
     let title: String
-    let description: String
+    let subtitle: String
 }
 
-final class ArticleDataSource {
-    static func makeData() -> [Article] {
+final class MessageDataSource {
+    static func makeData() -> [Message] {
         return [
-            Article(
-                title: "UIKit",
-                description: "UIKit is a framework that provides the required infrastructure for iOS or tvOS apps. It provides window and view architecture."
+            Message(
+                title: "Important",
+                subtitle: "This subtitle is short."
             ),
-            Article(
-                title: "Auto Layout",
-                description: "Auto Layout dynamically calculates the size and position of all the views in your view hierarchy, based on constraints placed on those views."
-            ),
-            Article(
-                title: "Dynamic Cells",
-                description: "Dynamic height cells are a common UIKit interview problem. The correct solution relies entirely on Auto Layout and proper constraint configuration without manual height calculations."
+            Message(
+                title: "System Warning",
+                subtitle: "This subtitle is intentionally very long to force vertical compression inside a fixed height table view cell so that Auto Layout priorities actually matter."
             )
         ]
     }
