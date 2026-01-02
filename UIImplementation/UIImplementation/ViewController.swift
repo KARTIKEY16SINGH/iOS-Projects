@@ -12,8 +12,7 @@ class ViewController: UIViewController {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
-        tableView.estimatedRowHeight = 44
-        tableView.rowHeight = 44
+        tableView.delegate = self
         return tableView
     }()
 
@@ -36,89 +35,31 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        ArticleDataSource.makeData().count
+        ViewControllerDataSource.dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: DynamicHeightTableViewCell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell") as? DynamicHeightTableViewCell ?? .init(style: .default, reuseIdentifier: "tableViewCell")
-        cell.titleLabel.text = ArticleDataSource.makeData()[indexPath.row].description
-        cell.descriptionLabel.text = ArticleDataSource.makeData()[indexPath.row].description
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell") ?? .init(style: .default, reuseIdentifier: "tableViewCell")
+        cell.textLabel?.text = ViewControllerDataSource.dataSource[indexPath.row].title
         return cell
     }
 }
 
-final class DynamicHeightTableViewCell: UITableViewCell {
-    var titleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(descriptionLabel)
-        layoutLabels()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        titleLabel.text = ""
-        descriptionLabel.text = ""
-    }
-    
-    let padding: CGFloat = 16
-    
-    private func layoutLabels() {
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: padding),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: padding),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -padding),
-            
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: padding),
-            descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -padding)
-        ])
-        titleLabel.setContentHuggingPriority(.required, for: .vertical)
-        descriptionLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ViewControllerDataSource.dataSource[indexPath.row].controller.init()
+        navigationController?.pushViewController(vc, animated: true)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 
-
-struct Article {
-    let title: String
-    let description: String
+struct RowData {
+    var title: String
+    var controller: UIViewController.Type
 }
 
-final class ArticleDataSource {
-    static func makeData() -> [Article] {
-        return [
-            Article(
-                title: "UIKit",
-                description: "UIKit is a framework that provides the required infrastructure for iOS or tvOS apps. It provides window and view architecture."
-            ),
-            Article(
-                title: "Auto Layout",
-                description: "Auto Layout dynamically calculates the size and position of all the views in your view hierarchy, based on constraints placed on those views."
-            ),
-            Article(
-                title: "Dynamic Cells",
-                description: "Dynamic height cells are a common UIKit interview problem. The correct solution relies entirely on Auto Layout and proper constraint configuration without manual height calculations."
-            )
-        ]
-    }
+enum ViewControllerDataSource {
+    static let dataSource: [RowData] = [
+        .init(title: "Dynamic Height Cells", controller: DynamicHeightCellsViewController.self)
+    ]
 }
