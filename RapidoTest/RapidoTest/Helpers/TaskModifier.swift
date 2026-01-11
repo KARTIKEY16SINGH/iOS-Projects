@@ -12,7 +12,7 @@ protocol TaskModifiable {
     func mapToStore(storeTask: CDTask, task: Task)
 }
 
-struct TaskModifier: TaskModifiable {
+struct TaskModifier {
     func convertFromStore(task: CDTask) -> Task {
         debugPrint("convertFromStore task - \(task)")
         return .init(
@@ -33,3 +33,5 @@ struct TaskModifier: TaskModifiable {
         storeTask.dueDate = task.dueDate
     }
 }
+
+extension TaskModifier: TaskModifiable {}

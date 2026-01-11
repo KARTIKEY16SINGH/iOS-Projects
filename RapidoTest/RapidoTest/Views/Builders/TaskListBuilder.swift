@@ -8,7 +8,7 @@
 import UIKit
 
 struct TaskListBuilder {
-    func build() -> UIViewController {
+    func build() -> some UIViewController {
         let viewController = TaskListViewController()
         let repository = TaskRepository(persistenceStorage: PersistenceContainer.shared, dataModifier: TaskModifier())
         let viewModel = TaskViewModel(repository: repository)

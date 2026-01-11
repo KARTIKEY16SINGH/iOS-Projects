@@ -28,6 +28,10 @@ final class TaskListViewController: UIViewController {
         title = "UIKit Task List"
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(addTaskTapped))
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel?.handle(action: .viewLoaded)
     }
     

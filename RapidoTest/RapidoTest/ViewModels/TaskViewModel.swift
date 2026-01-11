@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol TaskViewModelable {
     var view: TaskViewable? {get set}
@@ -32,7 +33,7 @@ final class TaskViewModel {
     }
 }
 
-extension TaskViewModel: TaskViewModelable {
+extension TaskViewModel: TaskViewModelable{
     func handle(action: TaskActions) {
         switch action {
         case .viewLoaded:
@@ -75,4 +76,5 @@ extension TaskViewModel: TaskViewModelable {
 
 enum Tabs: CaseIterable {
     case uiKit
+    case swiftUI
 }

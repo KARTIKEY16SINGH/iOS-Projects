@@ -66,7 +66,7 @@ struct TaskRepository: TaskRepositoryable {
         return []
     }
     
-    func getPredicate(for id: UUID) -> NSPredicate {
+    private func getPredicate(for id: UUID) -> NSPredicate {
         NSPredicate(format: "id==%@", id as CVarArg)
     }
 }
