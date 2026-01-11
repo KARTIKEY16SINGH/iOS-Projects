@@ -16,6 +16,8 @@ struct TabsBuilder: TabsBuildable {
         switch tab {
         case .uiKit:
             return TaskListBuilder().build()
+        case .swiftUI:
+            return SwfitUITaskListBuilder().build()
         }
     }
 }
