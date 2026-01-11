@@ -184,6 +184,16 @@ final class TaskListViewController: UITableViewController {
             }
         }
         
+        cell.onNext = {
+            NotificationManager.shared.cancel(task: task)
+            task.currentStep = SpacedRevisionScheduler.advance(step: task.currentStep)
+            NotificationManager.shared.scheduleNext(task: task)
+            CoreDataStack.shared.save()
+            DispatchQueue.main.async { [weak self] in
+                self?.reload()
+            }
+        }
+        
         return cell
     }
 }

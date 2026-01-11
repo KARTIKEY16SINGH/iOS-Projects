@@ -14,6 +14,7 @@ final class TaskCell: UITableViewCell {
     var onResume: (() -> Void)?
     var onRewind: (() -> Void)?
     var onDelete: (() -> Void)?
+    var onNext: (() -> Void)?
     
     // MARK: - UI Elements
     private let menuButton: UIButton = {
@@ -80,6 +81,9 @@ final class TaskCell: UITableViewCell {
             },
             UIAction(title:"Delete") { [weak self] _ in
                 self?.onDelete?()
+            },
+            UIAction(title:"Next") { [weak self] _ in
+                self?.onNext?()
             }
         ])
         
