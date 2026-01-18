@@ -107,96 +107,76 @@ final class TaskListViewModel {
     }
     
     private func fetchTasks(from start: Date, to end: Date) -> [RevisionTask] {
-        let request: NSFetchRequest<RevisionTask> = RevisionTask.fetchRequest()
-        request.predicate = NSPredicate(
-            format: """
-            isPaused == NO AND
-            lastScheduledAt >= %@ AND
-            lastScheduledAt < %@
-            """,
-            start as NSDate,
-            end as NSDate
+        let historyReq: NSFetchRequest<RevisionHistory> =
+        RevisionHistory.fetchRequest()
+        
+        historyReq.predicate = NSPredicate(
+            format: "scheduledAt >= %@ AND scheduledAt < %@",
+            start as NSDate, end as NSDate
         )
         
-        request.sortDescriptors = [
-            NSSortDescriptor(key: "lastScheduledAt", ascending: true)
-        ]
+        let history = (try? context.fetch(historyReq)) ?? []
+        let ids = history.map { $0.taskId }
         
-        return (try? context.fetch(request)) ?? []
+        guard !ids.isEmpty else { return [] }
+        
+        let taskReq: NSFetchRequest<RevisionTask> =
+        RevisionTask.fetchRequest()
+        
+        taskReq.predicate = NSPredicate(format: "id IN %@", ids)
+        
+        return (try? context.fetch(taskReq)) ?? []
     }
-}
-
-
-extension Date {
-    static func todayRange() -> (start: Date, end: Date) {
-        let calendar = Calendar.current
-        let start = calendar.startOfDay(for: Date())
-        let end = calendar.date(byAdding: .day, value: 1, to: start)!
-        return (start, end)
-    }
-}
-
-import Foundation
-
-extension Date {
     
-    /// Custom "Today" window:
-    /// From today 08:00 → tomorrow 08:00 (local time)
-    static func todayFrom8AMRange() -> (start: Date, end: Date) {
-        let calendar = Calendar.current
-        let now = Date()
+    func backfillAllMissingHistoryOnce() {
+        let context = CoreDataStack.shared.context
         
-        var startComponents = calendar.dateComponents(
-            [.year, .month, .day],
-            from: now
-        )
-        startComponents.hour = 8
-        startComponents.minute = 0
-        startComponents.second = 0
+        // 1️⃣ Fetch all tasks that have a scheduled date
+        let taskReq: NSFetchRequest<RevisionTask> = RevisionTask.fetchRequest()
+        taskReq.predicate = NSPredicate(format: "lastScheduledAt != nil")
         
-        let start = calendar.date(from: startComponents)!
-        
-        let end = calendar.date(
-            byAdding: .day,
-            value: 1,
-            to: start
-        )!
-        
-        // If current time is before 8 AM, shift window back one day
-        if now < start {
-            let adjustedStart = calendar.date(
-                byAdding: .day,
-                value: -1,
-                to: start
-            )!
-            let adjustedEnd = start
-            debugPrint("Date todayFrom8AMRange start -> \(adjustedStart) , end -> \(adjustedEnd) ")
-            return (adjustedStart, adjustedEnd)
+        guard let tasks = try? context.fetch(taskReq) else {
+            print("❌ Failed to fetch tasks")
+            return
         }
-        debugPrint("Date todayFrom8AMRange start -> \(start) , end -> \(end) ")
-        return (start, end)
+        
+        var insertedCount = 0
+        
+        for task in tasks {
+            guard
+                let taskId = task.id,
+                let scheduledAt = task.lastScheduledAt
+            else { continue }
+            
+            // 2️⃣ Check if history already exists
+            let historyReq: NSFetchRequest<RevisionHistory> =
+            RevisionHistory.fetchRequest()
+            
+            historyReq.predicate = NSPredicate(
+                format: "taskId == %@ AND scheduledAt == %@",
+                taskId as CVarArg,
+                scheduledAt as NSDate
+            )
+            
+            let exists = (try? context.fetch(historyReq))?.isEmpty == false
+            
+            if !exists {
+                // 3️⃣ Insert missing history entry
+                let h = RevisionHistory(context: context)
+                h.id = UUID()
+                h.taskId = taskId
+                h.scheduledAt = scheduledAt
+                
+                insertedCount += 1
+                print("✅ Backfilled:", task.title ?? "(Untitled)", scheduledAt)
+            }
+        }
+        
+        // 4️⃣ Save once
+        try? context.save()
+        print("🎉 History backfill complete. Inserted:", insertedCount)
     }
-}
 
-extension Date {
-    
-    /// 08:00 of the given date → 08:00 of next day
-    static func revisionWindow(for date: Date) -> (start: Date, end: Date) {
-        let calendar = Calendar.current
-        
-        var components = calendar.dateComponents(
-            [.year, .month, .day],
-            from: date
-        )
-        components.hour = 8
-        components.minute = 0
-        components.second = 0
-        
-        let start = calendar.date(from: components)!
-        let end = calendar.date(byAdding: .day, value: 1, to: start)!
-        
-        return (start, end)
-    }
 }
 
 extension RevisionTask {

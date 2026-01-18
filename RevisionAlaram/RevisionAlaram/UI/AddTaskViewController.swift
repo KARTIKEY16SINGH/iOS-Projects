@@ -10,20 +10,30 @@ internal import CoreData
 
 final class AddTaskViewController: UIViewController {
     
-    private let field = UITextField()
+    private let titleField = UITextField()
+    private let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
-        field.placeholder = "Enter topic"
-        field.borderStyle = .roundedRect
+        titleField.placeholder = "Enter topic"
+        titleField.borderStyle = .roundedRect
         
-        let btn = UIButton(type: .system)
-        btn.setTitle("Add", for: .normal)
-        btn.addTarget(self, action: #selector(addTask), for: .touchUpInside)
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.preferredDatePickerStyle = .wheels
+        /*datePicker.minimumDate = Date() */  // no past dates
         
-        let stack = UIStackView(arrangedSubviews: [field, btn])
+        let addButton = UIButton(type: .system)
+        addButton.setTitle("Add Task", for: .normal)
+        addButton.addTarget(self, action: #selector(addTask), for: .touchUpInside)
+        
+        let stack = UIStackView(arrangedSubviews: [
+            titleField,
+            datePicker,
+            addButton
+        ])
+        
         stack.axis = .vertical
         stack.spacing = 16
         
@@ -35,21 +45,39 @@ final class AddTaskViewController: UIViewController {
             stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24)
         ])
+        
+        titleField.delegate = self
     }
     
-    @objc func addTask() {
-        guard let text = field.text, !text.isEmpty else { return }
+    @objc private func addTask() {
+        guard let text = titleField.text, !text.isEmpty else { return }
         
-        let task = RevisionTask(context: CoreDataStack.shared.context)
+        let ctx = CoreDataStack.shared.context
+        let task = RevisionTask(context: ctx)
+        
         task.id = UUID()
         task.title = text
-        task.createdAt = Date()
+        task.createdAt = datePicker.date
         task.currentStep = 0
         task.isPaused = false
         task.isActive = true
         
+        // 🔴 IMPORTANT: Use user-selected time
+//        let selectedDate = datePicker.date
+//        task.lastScheduledAt = selectedDate
+        
         CoreDataStack.shared.save()
         NotificationManager.shared.scheduleNext(task: task)
+        
         dismiss(animated: true)
     }
 }
+
+extension AddTaskViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()  // Hides keyboard
+        return true
+    }
+}
+

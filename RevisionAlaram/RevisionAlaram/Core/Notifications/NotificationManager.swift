@@ -6,6 +6,7 @@
 //
 
 import UserNotifications
+internal import CoreData
 
 final class NotificationManager {
     
@@ -19,9 +20,11 @@ final class NotificationManager {
             let title = task.title
         else { return }
         
+        let baseDate = task.lastScheduledAt ?? (task.createdAt ?? Date())
+        
         let step = task.currentStep
         let nextDate = SpacedRevisionScheduler.nextRevisionDate(
-            from: Date(),
+            from: baseDate,
             step: step
         )
         
@@ -50,6 +53,7 @@ final class NotificationManager {
         
         task.lastScheduledAt = nextDate
         task.currentStep = step
+        logHistory(taskId: id, date: nextDate)
         CoreDataStack.shared.save()
     }
     
@@ -60,4 +64,49 @@ final class NotificationManager {
                 withIdentifiers: [id.uuidString]
             )
     }
+    
+    func scheduleInitial(task: RevisionTask, at date: Date) {
+        guard
+            task.isPaused == false,
+            let id = task.id,
+            let title = task.title
+        else { return }
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Revision Reminder"
+        content.body = "Revise: \(title)"
+        content.userInfo = ["taskId": id.uuidString]
+        
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: Calendar.current.dateComponents(
+                [.year, .month, .day, .hour, .minute],
+                from: date
+            ),
+            repeats: false
+        )
+        
+        let request = UNNotificationRequest(
+            identifier: id.uuidString,
+            content: content,
+            trigger: trigger
+        )
+        
+        UNUserNotificationCenter.current().add(request)
+        
+        task.lastScheduledAt = date
+        logHistory(taskId: id, date: date)
+        CoreDataStack.shared.save()
+    }
+    
+    private func logHistory(taskId: UUID, date: Date) {
+        let ctx = CoreDataStack.shared.context
+        let h = RevisionHistory(context: ctx)
+        
+        h.id = UUID()
+        h.taskId = taskId
+        h.scheduledAt = date
+        
+        CoreDataStack.shared.save()
+    }
+
 }

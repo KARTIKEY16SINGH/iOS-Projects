@@ -33,6 +33,7 @@ final class TaskListViewController: UITableViewController {
             action: #selector(filterChanged),
             for: .valueChanged
         )
+        viewModel.backfillAllMissingHistoryOnce()
         viewModel.advanceAndRescheduleMissedTasks()
     }
     
@@ -125,7 +126,7 @@ final class TaskListViewController: UITableViewController {
 
     
     @objc func add() {
-        navigationController?.pushViewController(AddTaskViewController(), animated: true)
+        present(AddTaskViewController(), animated: true)
     }
     
     override func tableView(_ tableView: UITableView,

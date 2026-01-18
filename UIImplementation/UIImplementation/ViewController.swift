@@ -61,6 +61,7 @@ struct RowData {
 enum ViewControllerDataSource {
     static let dataSource: [RowData] = [
         .init(title: "Dynamic Height Cells", controller: DynamicHeightCellsViewController.self),
-        .init(title: "Fixed Height Dynamic Content Cell", controller: FixedHeightCellsViewController.self)
+        .init(title: "Fixed Height Dynamic Content Cell", controller: FixedHeightCellsViewController.self),
+        .init(title: "Dynamic Collection View Grid", controller: DynamicCollectionGridViewController.self)
     ]
 }

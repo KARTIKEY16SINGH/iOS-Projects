@@ -4,18 +4,10 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>RevisionAlaram.xcscheme_^#shared#^_</key>
+		<key>ShoppingApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
-		</dict>
-	</dict>
-	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>C622D0F12EFF40940040C6EA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
 		</dict>
 	</dict>
 </dict>
